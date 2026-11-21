@@ -1,7 +1,8 @@
 {
   "name": "md-viz",
-  "version": "0.2.2",
-  "description": "25종의 시각화 도구와 지도·배지·이모지·GIF·디렉터리 트리·GitHub 알림으로 마크다운을 꾸밉니다.",
+  "version": "0.3.0",
+  "license": "MIT",
+  "description": "High-impact Markdown visualization plugin activating all 25 diagram, chart, music, code, and math renderers plus 6+4 GitHub Markdown visual techniques (neon SVG badges, live Mermaid, GeoJSON maps, LaTeX math, animated GIFs, 5/5 alerts, and gallery walls).",
   "author": {
     "name": "Technoetic"
   },
@@ -10,11 +11,11 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "MD-Viz",
-    "shortDescription": "마크다운 도식·차트·코드·수식 시각화",
+    "shortDescription": "Max-impact 25-tool Markdown visualization & GitHub visual showcase",
     "developerName": "Technoetic",
     "category": "Productivity",
     "defaultPrompt": [
-      "이 README를 md-viz로 시각화해 줘."
+      "Visualize this README at maximum impact with md-viz using all applicable engines (25 tools) and GitHub Markdown techniques."
     ]
   }
 }

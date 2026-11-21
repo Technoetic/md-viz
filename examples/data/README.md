@@ -4,7 +4,7 @@
 
 ## 준비
 
-Python 3, Node.js와 npm, R, Aside 브라우저와 `aside` CLI를 사용합니다. 한글을 표시할 수 있는 시스템 글꼴이 필요합니다. 이 폴더에서 다음 명령을 실행하세요.
+Python 3, Node.js와 npm, R, 그리고 브라우저 캡처 도구(기본 스크립트는 Chromium 기반 **Aside** 브라우저의 `aside` CLI 사용 — Aside 환경이 없는 외부 기여자는 로컬 HTTP 미리보기 `card.html?chart=<이름>`을 일반 Chromium/Playwright/브라우저로 열어 `article` 요소를 캡처할 수 있습니다)를 사용합니다. 한글을 표시할 수 있는 시스템 글꼴이 필요합니다. 이 폴더에서 다음 명령을 실행하세요.
 
 ```sh
 npm install

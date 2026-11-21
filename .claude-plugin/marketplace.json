@@ -1,6 +1,6 @@
 {
   "name": "technoetic-md-viz",
-  "description": "MD-Viz 마크다운 시각화 플러그인을 설치할 수 있는 마켓플레이스입니다.",
+  "description": "Marketplace for MD-Viz — the high-impact 25-renderer Markdown visualization and GitHub visual design plugin.",
   "owner": {
     "name": "Technoetic"
   },
@@ -8,8 +8,8 @@
     {
       "name": "md-viz",
       "source": "./plugins/md-viz",
-      "description": "25종의 시각화 도구와 지도·배지·이모지·GIF·디렉터리 트리·GitHub 알림으로 마크다운을 꾸밉니다.",
-      "version": "0.2.2"
+      "description": "High-impact Markdown visualization plugin activating all 25 diagram, chart, music, code, and math renderers plus 6+4 GitHub Markdown visual techniques (neon SVG badges, live Mermaid, GeoJSON maps, LaTeX math, animated GIFs, 5/5 alerts, and gallery walls).",
+      "version": "0.3.0"
     }
   ]
 }

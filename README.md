@@ -1,75 +1,207 @@
+<div align="center">
+  <strong>🌐 English</strong> · <a href="README.ko.md"><strong>🇰🇷 한국어 (Korean)</strong></a> · <a href="docs/github-elements.md"><strong>✨ GitHub Techniques (6+4)</strong></a> · <a href="plugins/md-viz/skills/md-viz/SKILL.md"><strong>📖 Skill Spec</strong></a>
+</div>
+
+<br>
+
 <picture>
   <source media="(prefers-reduced-motion: reduce)" srcset="docs/art/cover.png">
-  <img src="docs/art/cover.gif" width="1280" alt="MD-VIZ 공연 포스터. 레코드의 홈처럼 색 선이 움직인다. 도식·차트·악보 21종과 코드·수식 4종을 Antigravity, Claude Code, Codex에서 사용한다.">
+  <img src="docs/art/cover.gif" width="1280" alt="MD-VIZ NEON ENCORE poster. Vivid neon vinyl grooves pulse across a dark obsidian stage representing 25 visualization libraries and 6+4 GitHub Markdown visual techniques for Antigravity, Claude Code, and Codex.">
 </picture>
 
-# md-viz · 마크다운 시각화 플러그인
+<h1 align="center">⚡ md-viz · Full-Arsenal High-Impact Markdown Visualizer</h1>
 
 <div align="center">
-  <a href="plugins/md-viz/plugin.json"><img src="docs/art/elements/release.svg" alt="플러그인 버전 v0.2.2 · 배포 명세 열기"></a>
-  <a href="#25종-시각화-도감"><img src="docs/art/elements/renderers.svg" alt="시각화 도구 25종 · 전체 도감 보기"></a>
-  <a href="docs/github-elements.md"><img src="docs/art/elements/markdown.svg" alt="GitHub 마크다운 표현 6종 · 사용 예시 보기"></a>
-  <a href="#설치하기"><img src="docs/art/elements/hosts.svg" alt="설치 환경 3종 · 설치 방법 보기"></a>
+  <a href="plugins/md-viz/plugin.json"><img src="docs/art/elements/release.svg" alt="Release v0.3.0 · Open plugin manifest"></a>
+  <a href="LICENSE"><img src="docs/art/elements/license.svg" alt="MIT License · Read license"></a>
+  <a href=".github/workflows/ci.yml"><img src="docs/art/elements/ci.svg" alt="CI Ubuntu + Windows · View workflow"></a>
+  <a href="#-full-25-engine-inline-visual-wall"><img src="docs/art/elements/renderers.svg" alt="Gallery 25 Tools · Jump to full wall"></a>
+  <a href="docs/github-elements.md"><img src="docs/art/elements/markdown.svg" alt="GitHub Markdown 6+4 Live Techniques"></a>
+  <a href="#-install-in-one-command"><img src="docs/art/elements/hosts.svg" alt="Install on 3 AI Agent Hosts"></a>
 </div>
 <div align="center">
-  <a href="#antigravity-cli-agy"><img src="docs/art/elements/antigravity.svg" alt="Antigravity CLI 설치 명령"></a>
-  <a href="#claude-code"><img src="docs/art/elements/claude-code.svg" alt="Claude Code 설치 명령"></a>
-  <a href="#codex"><img src="docs/art/elements/codex.svg" alt="Codex 설치 명령"></a>
+  <a href="#antigravity-cli-agy"><img src="docs/art/elements/antigravity.svg" alt="Install for Antigravity CLI"></a>
+  <a href="#claude-code"><img src="docs/art/elements/claude-code.svg" alt="Install for Claude Code"></a>
+  <a href="#codex"><img src="docs/art/elements/codex.svg" alt="Install for Codex"></a>
+  <a href="plugins/md-viz/skills/md-viz/scripts/check_env.py"><img src="docs/art/elements/check-env.svg" alt="Zero-dependency local renderer preflight check_env.py"></a>
 </div>
 <div align="center">
-  <a href="docs/structure.md"><img src="docs/art/elements/structure.svg" alt="구조·신호·악보 도감 9종"></a>
-  <a href="docs/data.md"><img src="docs/art/elements/data.svg" alt="공연 데이터 도감 12종"></a>
-  <a href="docs/notation.md"><img src="docs/art/elements/notation.svg" alt="코드·수식 도감 4종"></a>
+  <a href="docs/structure.md"><img src="docs/art/elements/structure.svg" alt="Structure, Signals & Sheet Music · 9 Tools"></a>
+  <a href="docs/data.md"><img src="docs/art/elements/data.svg" alt="Data, Stats, Networks & Maps · 12 Tools"></a>
+  <a href="docs/notation.md"><img src="docs/art/elements/notation.svg" alt="Code Syntax & Math Typography · 4 Tools"></a>
+  <a href="docs/github-elements.md#알림-블록--공연-노트에서-무엇을-강조할까"><img src="docs/art/elements/alerts.svg" alt="All 5 GitHub Alert Types Live"></a>
 </div>
 <div align="center">
-  <a href="docs/structure.md#첫-멜로디--abcjs"><img src="docs/art/elements/abcjs.svg" alt="abcjs로 그린 첫 멜로디의 악보 보기"></a>
-  <a href="docs/data.md#d3--한-박씩-돌려-보면-어떤-조명이-켜질까"><img src="docs/art/elements/d3.svg" alt="D3로 그린 박자별 조명 큐 보기"></a>
-  <a href="docs/github-elements.md#geojson-지도--셔틀은-어디서-갈아탈까"><img src="docs/art/elements/geojson.svg" alt="GeoJSON으로 표시한 셔틀 지도 보기"></a>
-  <a href="docs/notation.md#다음-큐까지-몇-초를-셀까--katex"><img src="docs/art/elements/katex.svg" alt="KaTeX로 표시한 조명 큐 길이 계산식 보기"></a>
+  <a href="#-live-visual-overdrive-pipeline"><img src="docs/art/elements/mermaid.svg" alt="Live Styled Mermaid Flow"></a>
+  <a href="docs/structure.md#첫-멜로디--abcjs"><img src="docs/art/elements/abcjs.svg" alt="abcjs Sheet Music Score"></a>
+  <a href="docs/data.md#d3--한-박씩-돌려-보면-어떤-조명이-켜질까"><img src="docs/art/elements/d3.svg" alt="D3 Radial Beat Sequencer"></a>
+  <a href="#-live-interactive-geojson-map--github-techniques"><img src="docs/art/elements/geojson.svg" alt="Live Interactive GeoJSON Map"></a>
+  <a href="docs/notation.md#다음-큐까지-몇-초를-셀까--katex"><img src="docs/art/elements/katex.svg" alt="KaTeX + Live GitHub LaTeX Math"></a>
 </div>
 
-리허설 노트에 **“120 BPM, 4/4박자, 첫 마디는 도·레·미·솔”**이라고 적혀 있습니다. 연주자에게는 악보가, 조명 담당자에게는 어느 박에 스위치를 켤지 보여 주는 그림이 필요합니다. `md-viz`는 독자가 답을 찾을 수 있는 도구를 골라 그림을 만들고, 원문의 해당 문장 옆에 넣습니다.
+<p align="center">
+  <kbd>/md-viz</kbd> + <kbd>25 Rendering Libraries</kbd> + <kbd>6 Core GitHub Techniques</kbd> + <kbd>4 Native Boosters</kbd> → <strong>Maximum Visual Impact Without Inventing a Single Fact</strong>
+</p>
 
-README 전체를 맡기면 역할·동작을 구분하는 이모지와, 수치·상태의 출처를 열어 볼 수 있는 배지를 최대한 활용합니다. GitHub에서는 참고할 배경, 실행 요령, 필수 조건, 예상되는 오류, 손실 위험을 찾아 해당 문단에 다섯 종류의 알림을 고루 씁니다. [📖 스킬 원문](plugins/md-viz/skills/md-viz/SKILL.md)
+**Turn plain Markdown into an electrifying, multi-lens visual showcase.** Give `md-viz` a rehearsal note — *"120 BPM, 4/4 time, first bar C–D–E–G"* — and it fires every fitting renderer in parallel: sheet music for the band (**abcjs**), beat-accurate timing switches for lighting (**WaveDrom**), radial cue wheels (**D3**), Sankey crowd flow (**ECharts**), interactive maps (**GeoJSON** + **Leaflet**), syntax-lit code (**Shiki** + **highlight.js**), crisp equations (**KaTeX** + **MathJax** + native `$$...$$`), animated beat-sync GIFs, neon SVG badge walls, aligned directory trees, and all 5 GitHub alerts — **all directly inside your document**.
 
-## 여덟 음을 붙여 넣으면
+---
 
-> [!NOTE]
-> **NEON ENCORE**는 이 도감을 위해 만든 가상 공연입니다. 악곡, 관객 수, 셔틀 경로는 모두 같은 공연을 설명하는 시연용 예시입니다.
+## ⚡ Live Visual Overdrive Pipeline
 
-🎵 **첫 멜로디**의 두 번째 마디에서는 첫 번째 마디의 음을 거꾸로 연주합니다.
+Here is how `md-viz` inspects your machine with `scripts/check_env.py` and fans out a single Markdown draft across **25 visualization libraries** and **6+4 GitHub-native techniques** (rendered live by GitHub's native Mermaid engine with high-contrast neon `classDef` styling):
 
-[![공연 템포 120 BPM · 예제 데이터 열기](docs/art/elements/tempo.svg)](examples/data/show.json)
+```mermaid
+flowchart LR
+    DOC["📄 Source Markdown\nSpecs · README · Notes"]:::src --> SCAN["🔍 check_env.py\nZero-Dep Local Preflight"]:::env
+    SCAN --> W1["🎭 Structure & Signals\n9 Libraries\nMermaid · PlantUML · Graphviz\nD2 · Structurizr · markmap\nExcalidraw · WaveDrom · abcjs"]:::cyan
+    SCAN --> W2["📊 Data · Graphs · Maps\n12 Libraries\nVega-Lite · ggplot2 · ECharts\nLeaflet · Altair · Matplotlib\nD3 · Cytoscape · seaborn\nChart.js · Plot · Plotly"]:::amber
+    SCAN --> W3["🧮 Code & Math\n4 Libraries\nShiki · highlight.js\nMathJax · KaTeX"]:::violet
+    SCAN --> W4["✨ GitHub Native 6+4\nGeoJSON · Neon SVG Badges\nEmoji Rhythm · Picture GIF\nAligned Tree · 5/5 Alerts\nLive Mermaid · Live LaTeX"]:::magenta
+    W1 & W2 & W3 & W4 --> FINAL["🚀 Full-Arsenal Visual README\nFactual Fidelity + Maximum Contrast"]:::lime
 
-```text
-X:1
-T:Encore motif
-M:4/4
-L:1/4
-Q:1/4=120
-K:C
-C D E G | G E D C |]
+    classDef src fill:#131621,stroke:#94a3b8,color:#f8fafc,stroke-width:2px
+    classDef env fill:#0f172a,stroke:#38bdf8,color:#e0f2fe,stroke-width:2px
+    classDef cyan fill:#083344,stroke:#00f5d4,color:#ccfbf1,stroke-width:2px
+    classDef amber fill:#451a03,stroke:#ffbb54,color:#fef3c7,stroke-width:2px
+    classDef violet fill:#2e1065,stroke:#c084fc,color:#f3e8ff,stroke-width:2px
+    classDef magenta fill:#500724,stroke:#ff2e93,color:#fce7f3,stroke-width:2px
+    classDef lime fill:#1a2e05,stroke:#c8ff00,color:#ecfccb,stroke-width:3px
 ```
 
-[![abcjs로 렌더링한 악보. 도·레·미·솔 다음에 솔·미·레·도가 이어진다.](docs/art/structure/encore.png)](docs/structure.md#첫-멜로디--abcjs)
+---
 
-120 BPM에서는 한 박이 0.5초이므로 이 악보는 4초입니다. 같은 템포에서 조명 여덟 마디를 프로그래밍하려면 16초가 필요합니다. 아래 두 그림을 열면 **몇 번째 박**과 **몇 초 뒤**라는 질문에 각각 답할 수 있습니다.
+## 🎵 Eight Notes → Multi-Engine Impact
 
-| 💡 조명의 스위치는 어느 박에 바뀔까? | ⏱️ 여덟 마디가 끝나는 시각은? |
-|---|---|
-| [![WaveDrom으로 그린 클릭·반주·조명의 여덟 박 신호](docs/art/structure/count-in.png)](docs/structure.md#박자에-맞춘-스위치--wavedrom) | [![KaTeX가 표시한 식. 8마디 × 4박 × 0.5초 = 16초](docs/art/notation/katex.png)](docs/notation.md#다음-큐까지-몇-초를-셀까--katex) |
+> [!NOTE]
+> **NEON ENCORE** is a fictional concert crafted specifically to stress-test all **25 rendering libraries** and **6+4 GitHub Markdown techniques** against one shared dataset ([`examples/data/show.json`](examples/data/show.json)). Every chart, map, score, waveform, and formula below is generated from real code in [`examples/`](examples).
 
-## 설치하기
+[![Show Tempo 120 BPM · Open source dataset](docs/art/elements/tempo.svg)](examples/data/show.json)
 
-🔌 **설치할 환경**을 골라 터미널에서 해당 명령을 실행하세요. 새 대화를 열면 예시처럼 호출할 수 있습니다. 세 환경에서 같은 스킬 본문을 읽습니다.
+Drop eight quarter notes (`C D E G | G E D C |]`) into ABC notation and pair the live GitHub LaTeX equation with four simultaneous visual lenses (**abcjs**, **WaveDrom**, **KaTeX**, and **D3**):
 
-### Antigravity CLI (agy)
+$$\Delta t_{\text{beat}} = \frac{60}{120\text{ BPM}} = 0.5\text{ s}, \qquad T_{8\text{ bars}} = 8 \times 4 \times 0.5\text{ s} = 16\text{ s}$$
+
+| 🎼 Sheet Music (`abcjs`) | ⚡ Beat Switch Timing (`WaveDrom`) |
+|:---:|:---:|
+| [![abcjs sheet music rendering C-D-E-G then G-E-D-C at 120 BPM](docs/art/structure/encore.png)](docs/structure.md#첫-멜로디--abcjs) | [![WaveDrom 8-beat signal timing for click, track, and lights](docs/art/structure/count-in.png)](docs/structure.md#박자에-맞춘-스위치--wavedrom) |
+| 🧮 **Queue Duration Formula (`KaTeX`)** | 🎡 **32-Beat Radial Sequencer (`D3`)** |
+| [![KaTeX equation card: 8 bars x 4 beats x 0.5 s = 16 s](docs/art/notation/katex.png)](docs/notation.md#다음-큐까지-몇-초를-셀까--katex) | [![D3 circular 32-beat lighting sequencer for Wash, Beam, and Flash](docs/art/data/d3.png)](docs/data.md#d3--한-박씩-돌려-보면-어떤-조명이-켜질까) |
+
+### 🎬 Beat-Synced Animated Cue Player (`<picture>` Motion-Safe Loop)
+
+<picture>
+  <source media="(prefers-reduced-motion: reduce)" srcset="docs/art/cue-player.png">
+  <img src="docs/art/cue-player.gif" width="1080" alt="Three colored rows show Wash, Beam, and Flash lighting cues across 32 beats. The playhead advances every 0.5 seconds for a 16-second loop.">
+</picture>
+
+Bright cells fire on the active beat. Read vertically to see simultaneous fixtures; readers with `prefers-reduced-motion: reduce` automatically receive the crisp still frame [`cue-player.png`](docs/art/cue-player.png).
+
+---
+
+## 🔥 Full 25-Engine Inline Visual Wall
+
+![25-engine master contact sheet displaying all structure, data, code, and math renderers in five vivid rows](docs/art/contact-sheet.png)
+
+Every single one of the **25 libraries** is rendered live right below — click any card to inspect its full walkthrough and raw source code.
+
+<details open>
+<summary><strong>🎭 Wing 1 · Structure, Architecture, Signals & Sheet Music — All 9/9 Libraries</strong></summary>
+
+| 🔀 Mermaid · Flow Gate | 💬 PlantUML · Sequence | 🕸️ Graphviz · Signal DAG |
+|:---:|:---:|:---:|
+| [![Mermaid flow gate diagram](docs/art/structure/cue-gate.png)](docs/structure.md#시작-판단--mermaid)<br>[Walkthrough](docs/structure.md#시작-판단--mermaid) · [`.mmd`](examples/structure/cue-gate.mmd) | [![PlantUML standby call-and-response sequence](docs/art/structure/standby.png)](docs/structure.md#호출과-응답--plantuml)<br>[Walkthrough](docs/structure.md#호출과-응답--plantuml) · [`.puml`](examples/structure/standby.puml) | [![Graphviz audio signal routing graph](docs/art/structure/signal-path.png)](docs/structure.md#소리의-갈림길--graphviz)<br>[Walkthrough](docs/structure.md#소리의-갈림길--graphviz) · [`.dot`](examples/structure/signal-path.dot) |
+| 🧩 **D2 · Rack Topology** | 🏛️ **Structurizr · C4 Context** | 🌿 **markmap · Mind Map** |
+| [![D2 stage rack and FOH console topology](docs/art/structure/patch-bays.png)](docs/structure.md#장비의-위치--d2)<br>[Walkthrough](docs/structure.md#장비의-위치--d2) · [`.d2`](examples/structure/patch-bays.d2) | [![Structurizr C4 system context view](docs/art/structure/cue-desk.png)](docs/structure.md#시스템의-경계--structurizr)<br>[Walkthrough](docs/structure.md#시스템의-경계--structurizr) · [`.dsl`](examples/structure/cue-desk.dsl) | [![markmap rehearsal notes mind map](docs/art/structure/set-notes.png)](docs/structure.md#노트의-가지--markmap)<br>[Walkthrough](docs/structure.md#노트의-가지--markmap) · [`.md`](examples/structure/set-notes.md) |
+| ✏️ **Excalidraw · Stage Plot** | 📡 **WaveDrom · Timing** | 🎼 **abcjs · Sheet Music** |
+| [![Excalidraw spatial stage plot](docs/art/structure/stage-plot.png)](docs/structure.md#관객이-보는-무대--excalidraw)<br>[Walkthrough](docs/structure.md#관객이-보는-무대--excalidraw) · [`.js`](examples/structure/stage-plot.js) | [![WaveDrom count-in signal waveform](docs/art/structure/count-in.png)](docs/structure.md#박자에-맞춘-스위치--wavedrom)<br>[Walkthrough](docs/structure.md#박자에-맞춘-스위치--wavedrom) · [`.json`](examples/structure/count-in.json) | [![abcjs encore motif music notation](docs/art/structure/encore.png)](docs/structure.md#첫-멜로디--abcjs)<br>[Walkthrough](docs/structure.md#첫-멜로디--abcjs) · [`.abc`](examples/structure/encore.abc) |
+
+</details>
+
+<details open>
+<summary><strong>📊 Wing 2 · Data, Statistics, Networks & Geospatial Maps — All 12/12 Libraries</strong></summary>
+
+| 📈 Vega-Lite · Stacked Area | 📦 ggplot2 · Wait Boxplot | 🌊 Apache ECharts · Sankey |
+|:---:|:---:|:---:|
+| [![Vega-Lite stacked gate arrivals chart](docs/art/data/vega-lite.png)](docs/data.md#vega-lite--언제-입장객이-몰렸을까)<br>[Walkthrough](docs/data.md#vega-lite--언제-입장객이-몰렸을까) | [![ggplot2 horizontal wait-time boxplot with samples](docs/art/data/ggplot2.png)](docs/data.md#ggplot2--입구별로-관객은-얼마나-기다렸을까)<br>[Walkthrough](docs/data.md#ggplot2--입구별로-관객은-얼마나-기다렸을까) | [![Apache ECharts audience flow Sankey diagram](docs/art/data/echarts.png)](docs/data.md#apache-echarts--세-입구를-통과한-사람들은-어디로-갔을까)<br>[Walkthrough](docs/data.md#apache-echarts--세-입구를-통과한-사람들은-어디로-갔을까) |
+| 🧭 **Leaflet · Route Map** | 🏋️ **Altair · Dumbbell Delta** | 🎯 **Matplotlib · Polar Beam** |
+| [![Leaflet shuttle coordinate route map](docs/art/data/leaflet.png)](docs/data.md#leaflet--집결점에서-무대까지-어느-방향으로-움직일까)<br>[Walkthrough](docs/data.md#leaflet--집결점에서-무대까지-어느-방향으로-움직일까) | [![Altair planned vs actual soundcheck dumbbell chart](docs/art/data/altair.png)](docs/data.md#altair--사운드체크-계획은-어디서-어긋났을까)<br>[Walkthrough](docs/data.md#altair--사운드체크-계획은-어디서-어긋났을까) | [![Matplotlib polar lighting intensity pattern](docs/art/data/matplotlib.png)](docs/data.md#matplotlib--두-조명의-밝은-방향은-어디일까)<br>[Walkthrough](docs/data.md#matplotlib--두-조명의-밝은-방향은-어디일까) |
+| 🎡 **D3 · Radial Sequencer** | 🧬 **Cytoscape.js · Audio Mesh** | 🔥 **seaborn · Crowd Heatmap** |
+| [![D3 circular 32-beat lighting cue sequencer](docs/art/data/d3.png)](docs/data.md#d3--한-박씩-돌려-보면-어떤-조명이-켜질까)<br>[Walkthrough](docs/data.md#d3--한-박씩-돌려-보면-어떤-조명이-켜질까) | [![Cytoscape.js vocal audio splitter network](docs/art/data/cytoscape.png)](docs/data.md#cytoscapejs--보컬-소리가-녹음기까지-가는-길은)<br>[Walkthrough](docs/data.md#cytoscapejs--보컬-소리가-녹음기까지-가는-길은) | [![seaborn song-by-zone crowd energy heatmap](docs/art/data/seaborn.png)](docs/data.md#seaborn--어느-곡에서-객석-전체가-함께-반응했을까)<br>[Walkthrough](docs/data.md#seaborn--어느-곡에서-객석-전체가-함께-반응했을까) |
+| 🍩 **Chart.js · Power Donut** | 🏆 **Observable Plot · Merch Rank** | 💧 **Plotly · Seat Waterfall** |
+| [![Chart.js 100 kWh power share donut chart](docs/art/data/chartjs.png)](docs/data.md#chartjs--무엇이-전기를-가장-많이-썼을까)<br>[Walkthrough](docs/data.md#chartjs--무엇이-전기를-가장-많이-썼을까) | [![Observable Plot merchandise ranking chart](docs/art/data/observable.png)](docs/data.md#observable-plot--가장-잘-팔린-기념품은)<br>[Walkthrough](docs/data.md#observable-plot--가장-잘-팔린-기념품은) | [![Plotly seat inventory waterfall chart](docs/art/data/plotly.png)](docs/data.md#plotly--좌석-증감이-최종-판매-수를-어떻게-바꿨을까)<br>[Walkthrough](docs/data.md#plotly--좌석-증감이-최종-판매-수를-어떻게-바꿨을까) |
+
+</details>
+
+<details open>
+<summary><strong>🧮 Wing 3 · Code Syntax Highlighting & Mathematical Typography — All 4/4 Libraries</strong></summary>
+
+| 💎 Shiki · Static Highlight | 🔦 highlight.js · Dynamic Highlight |
+|:---:|:---:|
+| [![Shiki syntax-highlighted JS cue object](docs/art/notation/shiki.png)](docs/notation.md#첫-조명은-무슨-색일까--shiki)<br>[Walkthrough](docs/notation.md#첫-조명은-무슨-색일까--shiki) | [![highlight.js syntax-highlighted Python downbeat check](docs/art/notation/highlight.png)](docs/notation.md#어느-박에서-조명을-바꿀까--highlightjs)<br>[Walkthrough](docs/notation.md#어느-박에서-조명을-바꿀까--highlightjs) |
+| 📐 **MathJax · TeX SVG Equation** | ⚡ **KaTeX · Fast HTML/MathML** |
+| [![MathJax beat duration equation 60 / 120 = 0.5 s](docs/art/notation/mathjax.png)](docs/notation.md#한-박의-길이는--mathjax)<br>[Walkthrough](docs/notation.md#한-박의-길이는--mathjax) | [![KaTeX 8-bar cue duration formula = 16 s](docs/art/notation/katex.png)](docs/notation.md#다음-큐까지-몇-초를-셀까--katex)<br>[Walkthrough](docs/notation.md#다음-큐까지-몇-초를-셀까--katex) |
+
+</details>
+
+> [!CAUTION]
+> Re-rendering the data gallery overwrites existing PNG files under `docs/art/data/` by default. To preview regenerated charts safely without clobbering tracked assets, pass an alternate output directory: `python render.py --output preview` inside [`examples/data/`](examples/data/README.md#출력).
+
+---
+
+## 🗺️ Live Interactive GeoJSON Map & GitHub Techniques
+
+GitHub renders the `geojson` block below as a **live, zoomable, clickable vector map** directly inside this README — synchronized with [`docs/art/elements/shuttle.geojson`](docs/art/elements/shuttle.geojson) and [`examples/data/show.json`](examples/data/show.json):
+
+```geojson
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {"title": "A · 집결", "marker-color": "#27aaa6"},
+      "geometry": {"type": "Point", "coordinates": [126.9754, 37.5741]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"title": "B · 환승", "marker-color": "#d33b90"},
+      "geometry": {"type": "Point", "coordinates": [126.9836, 37.5708]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"title": "C · 무대", "marker-color": "#799326"},
+      "geometry": {"type": "Point", "coordinates": [126.9774, 37.5662]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"title": "방문 순서 A → B → C", "stroke": "#228582"},
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [[126.9754, 37.5741], [126.9836, 37.5708], [126.9774, 37.5662]]
+      }
+    }
+  ]
+}
+```
+
+> [!WARNING]
+> GeoJSON coordinates strictly follow **`[longitude, latitude]`** order. Swapping Seoul's longitude (`126.9754`) into the latitude slot produces an invalid out-of-range coordinate (`|lat| > 90`). Inspect the validated coordinates in [`docs/art/elements/shuttle.geojson`](docs/art/elements/shuttle.geojson).
+
+Explore all 6 core GitHub Markdown patterns + copyable templates in the full field guide: [**✨ GitHub Markdown Field Guide**](docs/github-elements.md) and [**📐 Copy-Paste Pattern Reference**](plugins/md-viz/skills/md-viz/references/markdown-patterns.md).
+
+---
+
+## 🔌 Install in One Command
+
+All three AI coding agents install the **exact same single-source plugin** (`plugins/md-viz/`, MIT licensed) bundling `SKILL.md`, `markdown-patterns.md`, `scripts/badge.py`, and `scripts/check_env.py`.
+
+### Antigravity CLI (`agy`)
 
 ```sh
 agy plugin install https://github.com/Technoetic/md-viz/tree/main/plugins/md-viz
 ```
 
-> `/md-viz README.md의 설치 순서를 처음 쓰는 사람이 따라갈 수 있게 그림으로 보여 줘.`
+> <kbd>/md-viz</kbd> `Turn README.md into a maximum-impact visual showcase using every applicable library and GitHub technique.`
 
 ### Claude Code
 
@@ -78,7 +210,7 @@ claude plugin marketplace add Technoetic/md-viz
 claude plugin install md-viz@technoetic-md-viz
 ```
 
-> `/md-viz:md-viz 리허설 노트에서 조명팀과 음향팀이 신호를 주고받는 순서를 그려 줘.`
+> <kbd>/md-viz:md-viz</kbd> `Visualize the architecture, metrics, and timing flow in this spec with maximum visual contrast.`
 
 ### Codex
 
@@ -87,74 +219,52 @@ codex plugin marketplace add Technoetic/md-viz
 codex plugin add md-viz@technoetic-md-viz
 ```
 
-> `$md-viz:md-viz README.md의 표를 그래프로 바꾸고, 원본 값과 단위가 일치하는지 확인해 줘.`
+> <kbd>$md-viz:md-viz</kbd> `Convert every table, workflow, and formula in README.md into vivid visuals and report exact tool coverage.`
 
-> [!IMPORTANT]
-> 플러그인은 시각화 지침을 설치합니다. 새 그림을 만들 때는 선택한 렌더러도 준비하세요. 이 저장소의 완성된 그림은 GitHub와 오프라인에서 바로 볼 수 있습니다. [데이터 도감 재현에 필요한 도구](examples/data/README.md#준비)
+### 🔍 Local Renderer Preflight (Zero Dependencies)
 
-## 저장소 구조
+Run the bundled preflight script anytime to see which of the 25 engines are ready on your machine:
 
-스킬의 도구 선택 기준은 `SKILL.md`에서, 그림을 다시 만드는 코드는 `examples/`에서 찾을 수 있습니다.
-
-```text
-md-viz/                     ← 저장소 루트
-├── plugins/md-viz/         ← 설치되는 플러그인
-│   ├── plugin.json         ← Antigravity 설치 정보
-│   └── skills/md-viz/      ← 스킬 본문과 참고 자료
-│       ├── SKILL.md        ← 시각화 도구 선택 기준
-│       └── scripts/        ← 설치에 포함되는 도구
-│           └── badge.py    ← 두 색의 SVG 배지 한 개 생성
-├── docs/                   ← 그림과 해설
-│   ├── github-elements.md  ← GitHub 문법 예제
-│   └── art/                ← 도감에 실린 그림
-├── examples/               ← 예제 코드와 데이터
-│   ├── badges.py           ← README 상단 배지 전체 생성
-│   └── data/               ← 공연 데이터와 차트 원본
-└── tests/                  ← 도감과 플러그인 검사
+```sh
+python plugins/md-viz/skills/md-viz/scripts/check_env.py
 ```
 
-상단 배지를 다시 만들려면 저장소 루트에서 `python examples/badges.py`를 실행하세요. 다른 프로젝트용 배지 한 개를 만드는 명령은 [배지 작성 예시](plugins/md-viz/skills/md-viz/references/markdown-patterns.md#배지)에 있습니다.
-
-## 25종 시각화 도감
-
-**25개 도구가 같은 가상 공연을 서로 다른 자리에서 봅니다.** 무대감독은 시작 신호를 따라가고, 객석 담당자는 입장 흐름을 읽고, 조명 담당자는 박자를 시간으로 바꿉니다. 각 도감에는 그림, 해설, 입력 원본이 함께 있습니다.
-
-<picture>
-  <source media="(prefers-reduced-motion: reduce)" srcset="docs/art/cue-player.png">
-  <img src="docs/art/cue-player.gif" width="1080" alt="세 줄의 색 칸은 Wash, Beam, Flash 조명이 켜질 박이다. 재생 위치가 0.5초마다 한 칸씩 이동해 32박을 16초에 돈다.">
-</picture>
-
-밝은 칸이 켜질 박입니다. 세로로 읽으면 그 순간에 함께 켜질 조명이 보입니다. 같은 32박을 원형으로 펼친 D3 그림과 비교해 보세요. [원형 조명 큐 보기](docs/data.md#d3--한-박씩-돌려-보면-어떤-조명이-켜질까)
-
-![도구 이름과 실제 렌더링을 다섯 줄에 배열한 25종 시각 색인. 아래 세 도감에서 각 그림을 크게 볼 수 있다.](docs/art/contact-sheet.png)
-
-| 도감 | 들어 있는 도구 |
-|---|---|
-| [🎭 **무대 뒤의 아홉 장면** · 9종](docs/structure.md) | Mermaid · PlantUML · Graphviz · D2 · Structurizr · markmap · Excalidraw · WaveDrom · abcjs |
-| [📊 **입장부터 앙코르까지, 공연 데이터** · 12종](docs/data.md) | Vega-Lite · Matplotlib · seaborn · Altair · ggplot2 · Chart.js · Observable Plot · Plotly · Apache ECharts · D3 · Cytoscape.js · Leaflet |
-| [🧮 **공연 기술 노트의 코드와 수식** · 4종](docs/notation.md) | Shiki · highlight.js · MathJax · KaTeX |
-
-> [!CAUTION]
-> 데이터 도감을 다시 그리면 기본 경로 `docs/art/data/`의 기존 PNG가 덮어써집니다. 원본과 비교하려면 `examples/data/`에서 `python render.py --output preview`로 새 그림을 별도 폴더에 저장하세요. [도감 재현 방법](examples/data/README.md#출력)
-
-## GitHub 문서 표현 6가지
-
-📍 **셔틀은 어디에서 갈아탈까?** 예제 지도에서 집결지 A, 환승지 B, 무대 C의 위치를 볼 수 있습니다. 🎵 **조명 큐는 얼마나 빠를까?** 템포 배지를 누르면 원본 값이, GIF를 열면 그 박자에 맞춰 켜지는 조명이 보입니다.
-
-> [!WARNING]
-> 셔틀 지도를 내 좌표로 바꿀 때는 경도, 위도 순서로 입력하세요. 서울 예제의 첫 경도 `126.9754`를 위도 자리에 넣으면 유효 범위를 벗어납니다. [예제 좌표 확인](docs/art/elements/shuttle.geojson)
-
-[![GitHub 알림 5종 · 공연 안내서의 알림 예시 보기](docs/art/elements/alerts.svg)](docs/github-elements.md#알림-블록--공연-노트에서-무엇을-강조할까)
-
-예제에는 지도·배지·이모지·GIF를 넣는 구문과 실제 파일을 찾을 수 있는 디렉터리 트리가 있습니다. 알림 다섯 종류도 완성된 모습과 복사할 문법을 함께 실었습니다. [공연 안내서로 여섯 기법 보기](docs/github-elements.md)
+> [!IMPORTANT]
+> The plugin installs orchestration rules plus two zero-dependency Python stdlib scripts (`badge.py` and `check_env.py`). External diagram, chart, and math engines must be available locally when generating new images; all pre-rendered gallery assets in this repo work immediately on GitHub and offline. See [`examples/data/README.md`](examples/data/README.md#준비).
 
 > [!TIP]
-> 한 기법만 요청해도 됩니다. 예를 들어 “처음 온 기여자가 예제를 찾을 수 있게 실제 파일로 디렉터리 트리를 만들고, 실행할 파일에 설명을 붙여 줘”라고 해 보세요.
+> Default invocation goes **full-throttle** across all 25 engines and 6+4 GitHub patterns — or narrow it anytime with a single phrase like *"Mermaid flowchart only"* or *"generate one neon SVG badge with `badge.py`"*.
 
-### 내 문서에 적용하기
+---
 
-- 🖼️ **그림 한 장이 필요할 때** — “이 장애 대응 절차의 분기만 Mermaid 한 장으로 그려 줘.”
-- 📖 **기존 README 전체를 바꿀 때** — “25종을 검토해서 이 원고에 맞는 도구를 최대한 활용해 줘. 코드는 복사할 수 있게 두고, 그림에는 대체 텍스트를 붙여 줘.”
-- ✍️ **블로그에 옮길 때** — “네이버 블로그에 붙여 넣을 글이야. 그림은 PNG로 내보내고 식은 글로도 읽을 수 있게 해 줘.”
+## 🗂️ Repository Architecture
 
-도구 선택 기준과 게시 환경별 출력 방식은 [스킬 원문](plugins/md-viz/skills/md-viz/SKILL.md)에, 이 README의 그림에 사용한 코드는 [예제 폴더](examples)에 있습니다.
+```text
+md-viz/                         ← Repository root (MIT)
+├── LICENSE                     ← MIT open-source license
+├── SECURITY.md                 ← Security policy & boundaries
+├── README.ko.md                ← Full Korean showcase parity
+├── .github/                    ← Automation workflows
+│   └── workflows/              ← GitHub Actions definitions
+│       └── ci.yml              ← Ubuntu + Windows CI & ZIP check
+├── plugins/md-viz/             ← Slim installable 3-host plugin
+│   ├── plugin.json             ← Antigravity manifest (v0.3.0)
+│   ├── LICENSE                 ← Bundled MIT license
+│   ├── README.md               ← Plugin-local quick-start
+│   └── skills/md-viz/          ← Shared skill, patterns & tools
+│       ├── SKILL.md            ← Full-arsenal overdrive spec
+│       └── scripts/            ← Zero-dependency stdlib scripts
+│           ├── badge.py        ← 28px two-tone neon SVG badges
+│           └── check_env.py    ← 25-engine local preflight
+├── docs/                       ← 25-tool galleries & live art
+│   ├── github-elements.md      ← Live 6-pattern field guide
+│   └── art/                    ← Rendered PNG, GIF, SVG & GeoJSON
+├── examples/                   ← Reproducible inputs & renderers
+│   ├── badges.py               ← Regenerate all 20 SVG badges
+│   └── data/                   ← Show JSON & 12-chart pipeline
+├── tools/                      ← Release engineering helpers
+│   └── build_release_zip.py    ← Deterministic UTC slim ZIP
+└── tests/                      ← Gallery, badge & plugin tests
+```
+
+Regenerate all 20 SVG badges byte-identically from the repo root with `python examples/badges.py`, or build a deterministic slim plugin ZIP with `python tools/build_release_zip.py --version v0.3.0 --out dist`.

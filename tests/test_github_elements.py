@@ -1,4 +1,4 @@
-"""Check the files and rendered examples in the GitHub Markdown chapter."""
+"""Check the files and rendered examples in the GitHub Markdown chapter and bilingual READMEs."""
 import json
 import re
 import struct
@@ -28,8 +28,9 @@ class GitHubElementsTests(unittest.TestCase):
         self.fences = list(FENCE.finditer(self.document))
 
     def test_readme_and_visible_examples_link_to_existing_files(self):
-        readme = (ROOT / "README.md").read_text(encoding="utf-8")
-        self.assertRegex(FENCE.sub("", readme), r"\]\((?:\./)?docs/github-elements\.md(?:#[^)]*)?\)")
+        for readme_name in ("README.md", "README.ko.md"):
+            readme = (ROOT / readme_name).read_text(encoding="utf-8")
+            self.assertRegex(FENCE.sub("", readme), r"docs/github-elements\.md")
         references = re.findall(r"\]\(([^)\s]+)\)", self.visible)
         references.extend(re.findall(r'''\b(?:src|srcset|href)=["']([^"']+)["']''', self.visible))
         for reference in references:
@@ -40,22 +41,24 @@ class GitHubElementsTests(unittest.TestCase):
                 self.assertTrue((CHAPTER.parent / unquote(url.path)).exists(), reference)
 
     def test_rendered_geojson_and_download_follow_the_shuttle_stops(self):
-        embeds = [match["body"] for match in self.fences if match["info"].strip() == "geojson"]
-        self.assertEqual(len(embeds), 1, "Expected one live geojson fence")
-        links = re.findall(r"\]\(([^)\s]+\.geojson)\)", self.visible)
-        self.assertTrue(links, "Missing downloadable GeoJSON")
-        route = json.loads(embeds[0])
-        self.assertEqual(route, json.loads((CHAPTER.parent / links[0]).read_text(encoding="utf-8")))
-        self.assertEqual(route["type"], "FeatureCollection")
         stops = json.loads(SHOW.read_text(encoding="utf-8"))["shuttle"]
         coordinates = [[stop["lon"], stop["lat"]] for stop in stops]
-        geometries = [feature["geometry"] for feature in route["features"]]
-        self.assertTrue(all(feature["type"] == "Feature" for feature in route["features"]))
-        self.assertCountEqual([g["coordinates"] for g in geometries if g["type"] == "Point"], coordinates)
-        self.assertEqual([g["coordinates"] for g in geometries if g["type"] == "LineString"], [coordinates])
+        canonical = json.loads((ROOT / "docs/art/elements/shuttle.geojson").read_text(encoding="utf-8"))
+        for doc_path in (CHAPTER, ROOT / "README.md", ROOT / "README.ko.md"):
+            with self.subTest(document=doc_path.name):
+                fences = list(FENCE.finditer(doc_path.read_text(encoding="utf-8")))
+                embeds = [m["body"] for m in fences if m["info"].strip() == "geojson"]
+                self.assertEqual(len(embeds), 1, f"Expected one live geojson fence in {doc_path.name}")
+                route = json.loads(embeds[0])
+                self.assertEqual(route, canonical)
+                self.assertEqual(route["type"], "FeatureCollection")
+                geometries = [feature["geometry"] for feature in route["features"]]
+                self.assertTrue(all(feature["type"] == "Feature" for feature in route["features"]))
+                self.assertCountEqual([g["coordinates"] for g in geometries if g["type"] == "Point"], coordinates)
+                self.assertEqual([g["coordinates"] for g in geometries if g["type"] == "LineString"], [coordinates])
 
     def test_each_github_alert_has_visible_quoted_content(self):
-        for path in (CHAPTER, ROOT / "README.md"):
+        for path in (CHAPTER, ROOT / "README.md", ROOT / "README.ko.md"):
             with self.subTest(document=path.name):
                 visible = FENCE.sub("", path.read_text(encoding="utf-8"))
                 alerts = re.findall(r"(?:\A|\n[ \t]*\n)> \[!(\w+)\][ \t]*\n>[ \t]+\S", visible)
@@ -82,12 +85,14 @@ class GitHubElementsTests(unittest.TestCase):
                 self.assertRegex(self.visible, re.escape(symbol) + r"\s+[*_]*\w")
 
     def test_directory_trees_show_paths_and_aligned_roles(self):
-        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        readme_en = (ROOT / "README.md").read_text(encoding="utf-8")
+        readme_ko = (ROOT / "README.ko.md").read_text(encoding="utf-8")
         copy_examples = "\n".join(m["body"] for m in self.fences if m["info"].strip() == "markdown")
-        for example, source, directory, root_label in (
-            ("README", readme, ROOT, "md-viz/"),
-            ("chapter", self.document, CHAPTER.parent, "docs/"),
-            ("copy example", copy_examples, CHAPTER.parent, "docs/"),
+        for example, source, directory, root_label, role_pattern in (
+            ("README.md", readme_en, ROOT, "md-viz/", r"[A-Za-z]{3,}"),
+            ("README.ko.md", readme_ko, ROOT, "md-viz/", r"[가-힣]"),
+            ("chapter", self.document, CHAPTER.parent, "docs/", r"[가-힣]"),
+            ("copy example", copy_examples, CHAPTER.parent, "docs/", r"[가-힣]"),
         ):
             with self.subTest(example=example):
                 trees = [
@@ -96,9 +101,9 @@ class GitHubElementsTests(unittest.TestCase):
                 ]
                 self.assertTrue(trees, "Expected a fenced text tree")
                 for tree in trees:
-                    self.assert_annotated_tree(tree, directory, root_label)
+                    self.assert_annotated_tree(tree, directory, root_label, role_pattern)
 
-    def assert_annotated_tree(self, tree, directory, root_label):
+    def assert_annotated_tree(self, tree, directory, root_label, role_pattern):
         for guide in ("├── ", "│   ", "└── "):
             self.assertIn(guide, tree)
         self.assertNotIn("\t", tree)
@@ -107,10 +112,10 @@ class GitHubElementsTests(unittest.TestCase):
         for row in tree.splitlines():
             left, arrow, role = row.partition("← ")
             self.assertTrue(arrow and left.endswith("  "), row)
-            self.assertRegex(role, r"[가-힣]", row)
+            self.assertRegex(role, role_pattern, row)
             arrow_columns.add(sum(2 if unicodedata.east_asian_width(c) in ("F", "W") else 1 for c in left))
             names.append(left.rstrip())
-        self.assertEqual(len(arrow_columns), 1, "Align the role arrows in one display column")
+        self.assertEqual(len(arrow_columns), 1, f"Align the role arrows in one display column: {arrow_columns}")
         root, *entries = names
         self.assertEqual(root, root_label)
         parents = [directory]

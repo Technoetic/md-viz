@@ -1,4 +1,4 @@
 interface:
-  display_name: "md-viz · 마크다운 시각화"
-  short_description: "시각화 도구 25종을 검토하고 이모지·배지와 GitHub 알림 5종을 최대한 활용합니다."
-  default_prompt: "$md-viz:md-viz 이 원고에 맞는 시각화와 문서 표현을 적용해 줘. 사용한 도구와 적용한 표현을 알려 줘."
+  display_name: "md-viz · Max-Impact Markdown Visualizer"
+  short_description: "25종 시각화 라이브러리와 GitHub 표현 6+4종을 최대 화력으로 총동원하는 고자극 마크다운 시각화 플러그인."
+  default_prompt: "$md-viz:md-viz 이 문서에 가능한 모든 시각화 라이브러리(25종)와 GitHub 표현 기법(6+4종)을 최대한 극적이고 선명하게 총동원해 시각화하고, 실사용 도구·표현 집계를 보고해 줘."
