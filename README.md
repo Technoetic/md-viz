@@ -5,11 +5,30 @@
 
 # md-viz · 마크다운 시각화 플러그인
 
-리허설 노트에 **“120 BPM, 4/4박자, 첫 마디는 도·레·미·솔”**이라고 적혀 있습니다. 연주자에게는 악보가, 조명 담당자에게는 어느 박에 스위치를 켤지 보여 주는 그림이 필요합니다. `md-viz`는 독자가 답을 찾을 수 있는 도구를 골라 그림을 만들고, 원문의 해당 문장 옆에 넣습니다.
+<div align="center">
+  <a href="plugins/md-viz/plugin.json"><img src="docs/art/elements/release.svg" alt="플러그인 버전 v0.2.2 · 배포 명세 열기"></a>
+  <a href="#25종-시각화-도감"><img src="docs/art/elements/renderers.svg" alt="시각화 도구 25종 · 전체 도감 보기"></a>
+  <a href="docs/github-elements.md"><img src="docs/art/elements/markdown.svg" alt="GitHub 마크다운 표현 6종 · 사용 예시 보기"></a>
+  <a href="#설치하기"><img src="docs/art/elements/hosts.svg" alt="설치 환경 3종 · 설치 방법 보기"></a>
+</div>
+<div align="center">
+  <a href="#antigravity-cli-agy"><img src="docs/art/elements/antigravity.svg" alt="Antigravity CLI 설치 명령"></a>
+  <a href="#claude-code"><img src="docs/art/elements/claude-code.svg" alt="Claude Code 설치 명령"></a>
+  <a href="#codex"><img src="docs/art/elements/codex.svg" alt="Codex 설치 명령"></a>
+</div>
+<div align="center">
+  <a href="docs/structure.md"><img src="docs/art/elements/structure.svg" alt="구조·신호·악보 도감 9종"></a>
+  <a href="docs/data.md"><img src="docs/art/elements/data.svg" alt="공연 데이터 도감 12종"></a>
+  <a href="docs/notation.md"><img src="docs/art/elements/notation.svg" alt="코드·수식 도감 4종"></a>
+</div>
+<div align="center">
+  <a href="docs/structure.md#첫-멜로디--abcjs"><img src="docs/art/elements/abcjs.svg" alt="abcjs로 그린 첫 멜로디의 악보 보기"></a>
+  <a href="docs/data.md#d3--한-박씩-돌려-보면-어떤-조명이-켜질까"><img src="docs/art/elements/d3.svg" alt="D3로 그린 박자별 조명 큐 보기"></a>
+  <a href="docs/github-elements.md#geojson-지도--셔틀은-어디서-갈아탈까"><img src="docs/art/elements/geojson.svg" alt="GeoJSON으로 표시한 셔틀 지도 보기"></a>
+  <a href="docs/notation.md#다음-큐까지-몇-초를-셀까--katex"><img src="docs/art/elements/katex.svg" alt="KaTeX로 표시한 조명 큐 길이 계산식 보기"></a>
+</div>
 
-[![설치 환경 3종 · 환경별 설치 명령 보기](docs/art/elements/hosts.svg)](#설치하기)
-[![시각화 도구 25종 · 시각화 도감 보기](docs/art/elements/renderers.svg)](#25종-시각화-도감)
-[![GitHub 문서 표현 6종 · 문법과 예제 보기](docs/art/elements/markdown.svg)](docs/github-elements.md)
+리허설 노트에 **“120 BPM, 4/4박자, 첫 마디는 도·레·미·솔”**이라고 적혀 있습니다. 연주자에게는 악보가, 조명 담당자에게는 어느 박에 스위치를 켤지 보여 주는 그림이 필요합니다. `md-viz`는 독자가 답을 찾을 수 있는 도구를 골라 그림을 만들고, 원문의 해당 문장 옆에 넣습니다.
 
 README 전체를 맡기면 역할·동작을 구분하는 이모지와, 수치·상태의 출처를 열어 볼 수 있는 배지를 최대한 활용합니다. GitHub에서는 참고할 배경, 실행 요령, 필수 조건, 예상되는 오류, 손실 위험을 찾아 해당 문단에 다섯 종류의 알림을 고루 씁니다. [📖 스킬 원문](plugins/md-viz/skills/md-viz/SKILL.md)
 
@@ -72,6 +91,29 @@ codex plugin add md-viz@technoetic-md-viz
 
 > [!IMPORTANT]
 > 플러그인은 시각화 지침을 설치합니다. 새 그림을 만들 때는 선택한 렌더러도 준비하세요. 이 저장소의 완성된 그림은 GitHub와 오프라인에서 바로 볼 수 있습니다. [데이터 도감 재현에 필요한 도구](examples/data/README.md#준비)
+
+## 저장소 구조
+
+스킬의 도구 선택 기준은 `SKILL.md`에서, 그림을 다시 만드는 코드는 `examples/`에서 찾을 수 있습니다.
+
+```text
+md-viz/                     ← 저장소 루트
+├── plugins/md-viz/         ← 설치되는 플러그인
+│   ├── plugin.json         ← Antigravity 설치 정보
+│   └── skills/md-viz/      ← 스킬 본문과 참고 자료
+│       ├── SKILL.md        ← 시각화 도구 선택 기준
+│       └── scripts/        ← 설치에 포함되는 도구
+│           └── badge.py    ← 두 색의 SVG 배지 한 개 생성
+├── docs/                   ← 그림과 해설
+│   ├── github-elements.md  ← GitHub 문법 예제
+│   └── art/                ← 도감에 실린 그림
+├── examples/               ← 예제 코드와 데이터
+│   ├── badges.py           ← README 상단 배지 전체 생성
+│   └── data/               ← 공연 데이터와 차트 원본
+└── tests/                  ← 도감과 플러그인 검사
+```
+
+상단 배지를 다시 만들려면 저장소 루트에서 `python examples/badges.py`를 실행하세요. 다른 프로젝트용 배지 한 개를 만드는 명령은 [배지 작성 예시](plugins/md-viz/skills/md-viz/references/markdown-patterns.md#배지)에 있습니다.
 
 ## 25종 시각화 도감
 

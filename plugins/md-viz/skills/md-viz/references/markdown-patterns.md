@@ -1,6 +1,6 @@
 # Markdown 표현 작성 예시
 
-아래는 공연 리허설 안내서를 가정한 시연용 예시다. 작성 중인 문서에 붙일 때는 이름·좌표·상태를 원자료에서 가져오고, 이미지와 링크는 그 문서를 기준으로 실제 존재하는 경로에 맞춘다.
+공연 리허설은 시연용 예시다. README 배지와 디렉터리 트리는 md-viz 저장소의 실제 파일을 사용한다. 다른 문서에 옮길 때는 대상 자료에서 이름·값·경로를 확인한다.
 
 ## 지리 지도
 
@@ -22,15 +22,34 @@ GitHub에서 다음 블록은 한 지점을 표시한다. GeoJSON의 점 좌표�
 
 ## 배지
 
-릴리스 버전은 해당 릴리스에, 라이선스는 라이선스 파일에 연결한다. 자주 바뀌는 CI 상태에는 실제 워크플로의 상태 배지를 사용한다. 공연 안내서에서는 박자를 확인할 수 있게 템포 배지를 입력 데이터에 연결한다.
+아래 블록을 md-viz 저장소 루트 README의 제목 아래에 붙이면 첫 줄에서는 설치 환경과 지원 범위를, 둘째 줄에서는 각 도감에 담긴 도구 수를 읽을 수 있다. 배지 하나를 누르면 해당 근거가 열린다. 링크 사이의 줄바꿈은 HTML에서 공백이 되어 좁은 화면에서 배지 단위로 줄이 바뀐다.
 
-문서 전체에 해당하는 버전·지원 환경은 제목 아래 배지로 모은다. 각 절에서는 새로 등장한 사실도 살핀다. 공연 안내서라면 음악 절의 120 BPM과 교통 절의 셔틀 경유지 3곳을 각각 배지로 만들 수 있다.
-
-```markdown
-[![시연곡 템포 120 BPM](assets/tempo.svg)](show.json)
+```html
+<div align="center">
+  <a href="#설치하기"><img src="docs/art/elements/hosts.svg" alt="설치 환경 3종"></a>
+  <a href="#25종-시각화-도감"><img src="docs/art/elements/renderers.svg" alt="시각화 도구 25종"></a>
+  <a href="docs/github-elements.md"><img src="docs/art/elements/markdown.svg" alt="GitHub 문서 표현 6종"></a>
+</div>
+<div align="center">
+  <a href="docs/structure.md"><img src="docs/art/elements/structure.svg" alt="무대 구조와 신호 도구 9종"></a>
+  <a href="docs/data.md"><img src="docs/art/elements/data.svg" alt="공연 데이터 도구 12종"></a>
+  <a href="docs/notation.md"><img src="docs/art/elements/notation.svg" alt="코드와 수식 도구 4종"></a>
+</div>
 ```
 
-이미지를 표시하지 않는 문서에는 `[공연 템포 120 BPM](show.json)`으로 값과 근거를 함께 남긴다.
+새 배지도 예제 SVG처럼 같은 높이의 직사각형 두 칸으로 만든다. 왼쪽에는 짙은 회색 바탕에 짧은 이름(예: `DATA`, `설치 환경`), 오른쪽에는 항목별 강조색에 값(예: `12 TOOLS`, `3종`)을 적는다. 릴리스·라이선스·CI를 표시할 때는 각각 해당 릴리스, 라이선스 파일, 실제 워크플로에 연결한다.
+
+스킬 폴더에서 다음 명령을 실행하면 현재 폴더에 높이 28px인 `data-tools.svg`가 생긴다. README에 쓸 때는 `data-tools.svg` 자리에 대상 저장소의 SVG 출력 경로를 넣는다. 생성기는 값 칸의 색에 맞춰 읽기 쉬운 글자색을 고른다. [배지 생성기](../scripts/badge.py)
+
+```sh
+python scripts/badge.py DATA "12 TOOLS" data-tools.svg --color "#19C6A3"
+```
+
+해당 절에서 처음 쓰는 배지는 근거 옆에 둔다. 아래 Markdown을 같은 README의 공연 예제 절에 붙이면 시연곡의 템포에서 원본 데이터로 이동한다. 이미지를 표시할 수 없는 매체에는 `[공연 템포 120 BPM](examples/data/show.json)`으로 옮긴다.
+
+```markdown
+[![공연 템포 120 BPM](docs/art/elements/tempo.svg)](examples/data/show.json)
+```
 
 ## 이모지
 
@@ -57,20 +76,23 @@ GitHub에서는 `:white_check_mark:` 같은 단축 코드도 쓸 수 있다. 다
 
 ## 디렉터리 트리
 
-문서가 가리키는 경로를 기준으로 독자에게 필요한 가지를 뽑는다. 아래에서는 실행할 파일과 교체할 이미지를 찾을 수 있다.
+저장소 루트에서 `git ls-files -- examples/data/show.json examples/cue_player.py docs/art/cue-player.gif docs/art/cue-player.png`을 실행하면 아래 예제의 네 파일을 확인할 수 있다. 트리는 같은 루트를 `.`으로 표시한다. 코드 블록 전체를 복사하면 입력, 생성 코드, 결과 파일의 역할이 경로 옆에 남는다.
 
 ````markdown
 ```text
-rehearsal/
-├── README.md
-├── assets/
-│   ├── cue-change.gif
-│   └── cue-change.png
-└── player.py
+.                           ← 저장소 루트
+├── examples/               ← 공연 예제의 입력과 코드
+│   ├── data/               ← 공연 데이터
+│   │   └── show.json       ← 조명 큐와 템포의 원본
+│   └── cue_player.py       ← 조명 큐 애니메이션 생성
+└── docs/                   ← 시각화 도감
+    └── art/                ← 도감에 쓰는 그림
+        ├── cue-player.gif  ← 재생 중인 조명 큐
+        └── cue-player.png  ← 첫 박의 정지 화면
 ```
 ````
 
-고정폭 글꼴을 지원하지 않는 매체에는 `rehearsal/player.py`처럼 전체 상대 경로를 목록으로 적는다.
+폴더 이름에는 `/`를 붙이고, 공백은 트리 기호와 가장 긴 파일 이름을 포함한 표시 폭을 기준으로 채운다. 한글 경로가 있으면 완성된 고정폭 블록에서 화살표 열을 확인한다. 고정폭 글꼴을 지원하지 않는 매체에는 `examples/data/show.json — 조명 큐와 템포의 원본`처럼 전체 상대 경로와 역할을 한 줄에 쓴다.
 
 ## GitHub 알림 5종
 

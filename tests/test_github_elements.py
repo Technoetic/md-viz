@@ -2,6 +2,7 @@
 import json
 import re
 import struct
+import unicodedata
 import unittest
 import xml.etree.ElementTree as ET
 from pathlib import Path
@@ -80,23 +81,47 @@ class GitHubElementsTests(unittest.TestCase):
             with self.subTest(symbol=symbol):
                 self.assertRegex(self.visible, re.escape(symbol) + r"\s+[*_]*\w")
 
-    def test_directory_tree_matches_repository_paths(self):
-        trees = [
-            match["body"] for match in self.fences
-            if match["info"].strip() == "text" and "└── " in match["body"]
-        ]
-        self.assertTrue(trees, "Expected a plain-text directory tree")
-        for tree in trees:
-            root, *entries = tree.strip().splitlines()
-            parents = [ROOT / root]
-            self.assertTrue(parents[0].is_dir(), root)
-            for entry in entries:
-                branch = re.fullmatch(r"((?:│   |    )*)[├└]── (.+)", entry)
-                self.assertIsNotNone(branch, entry)
-                depth = len(branch[1]) // 4
-                path = parents[depth] / branch[2]
-                self.assertTrue(path.is_dir() if branch[2].endswith("/") else path.is_file(), path)
-                parents[depth + 1:] = [path]
+    def test_directory_trees_show_paths_and_aligned_roles(self):
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        copy_examples = "\n".join(m["body"] for m in self.fences if m["info"].strip() == "markdown")
+        for example, source, directory, root_label in (
+            ("README", readme, ROOT, "md-viz/"),
+            ("chapter", self.document, CHAPTER.parent, "docs/"),
+            ("copy example", copy_examples, CHAPTER.parent, "docs/"),
+        ):
+            with self.subTest(example=example):
+                trees = [
+                    m["body"] for m in FENCE.finditer(source)
+                    if m["info"].strip() == "text" and "└── " in m["body"]
+                ]
+                self.assertTrue(trees, "Expected a fenced text tree")
+                for tree in trees:
+                    self.assert_annotated_tree(tree, directory, root_label)
+
+    def assert_annotated_tree(self, tree, directory, root_label):
+        for guide in ("├── ", "│   ", "└── "):
+            self.assertIn(guide, tree)
+        self.assertNotIn("\t", tree)
+        arrow_columns = set()
+        names = []
+        for row in tree.splitlines():
+            left, arrow, role = row.partition("← ")
+            self.assertTrue(arrow and left.endswith("  "), row)
+            self.assertRegex(role, r"[가-힣]", row)
+            arrow_columns.add(sum(2 if unicodedata.east_asian_width(c) in ("F", "W") else 1 for c in left))
+            names.append(left.rstrip())
+        self.assertEqual(len(arrow_columns), 1, "Align the role arrows in one display column")
+        root, *entries = names
+        self.assertEqual(root, root_label)
+        parents = [directory]
+        for entry in entries:
+            branch = re.fullmatch(r"((?:│   |    )*)[├└]── (.+)", entry)
+            self.assertIsNotNone(branch, entry)
+            depth = len(branch[1]) // 4
+            self.assertLess(depth, len(parents), entry)
+            path = parents[depth] / branch[2]
+            self.assertTrue(path.is_dir() if branch[2].endswith("/") else path.is_file(), path)
+            parents[depth + 1:] = [path]
 
     def test_cue_animation_and_reduced_motion_still_have_the_same_dimensions(self):
         picture = re.search(r"<picture\b[^>]*>(.*?)</picture>", self.visible, re.DOTALL)

@@ -109,31 +109,31 @@
 
 ## 디렉터리 트리 · 지도 원본은 어디에 있을까?
 
-이 문서에서 사용하는 `docs/` 파일만 펼쳤습니다. 셔틀 좌표는 `elements/shuttle.geojson`에, 셔틀의 정지 지도는 `data/leaflet.png`에 있습니다. 두 폴더 모두 `art/` 아래에 있습니다.
+셔틀 경유지를 바꾸려면 `docs/art/elements/shuttle.geojson`을 열고, 인쇄할 지도가 필요하면 `docs/art/data/leaflet.png`를 여세요.
 
 ```text
-docs/
-├── github-elements.md
-└── art/
-    ├── cue-player.gif
-    ├── cue-player.png
-    ├── data/
-    │   └── leaflet.png
-    └── elements/
-        ├── shuttle.geojson
-        └── tempo.svg
+docs/                        ← 도감과 문서
+├── github-elements.md       ← GitHub 문법 예제
+└── art/                     ← 그림과 지도 파일
+    ├── cue-player.gif       ← 움직이는 조명 큐
+    ├── cue-player.png       ← 조명 큐 정지 화면
+    ├── data/                ← 공연 데이터 그림
+    │   └── leaflet.png      ← 셔틀 정지 지도
+    └── elements/            ← 지도 원본과 배지
+        ├── shuttle.geojson  ← 셔틀 좌표와 경로
+        └── tempo.svg        ← 템포 배지
 ```
 
 <details>
-<summary>들여쓰기를 보존하는 트리 문법 복사하기</summary>
+<summary>경로와 역할을 나란히 적는 트리 문법 복사하기</summary>
 
 ````markdown
 ```text
-docs/
-├── github-elements.md
-└── art/
-    └── elements/
-        └── shuttle.geojson
+docs/                        ← 도감과 문서
+├── art/                     ← 그림과 지도 파일
+│   └── elements/            ← 지도 원본과 배지
+│       └── shuttle.geojson  ← 셔틀 좌표와 경로
+└── github-elements.md       ← GitHub 문법 예제
 ```
 ````
 
