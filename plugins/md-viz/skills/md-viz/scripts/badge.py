@@ -6,18 +6,37 @@ import re
 import unicodedata
 from xml.sax.saxutils import escape
 
+HEX_COLOR_RE = re.compile(r"#[0-9a-fA-F]{6}")
+DEFAULT_LABEL_BG = "#23273a"
 
-def text_argument(value):
+
+def validate_text(value):
+    if not isinstance(value, str):
+        raise ValueError("Use a non-empty, printable label on a single line.")
     text = value.strip()
     if not text or not text.replace("\u200d", "").isprintable():
-        raise argparse.ArgumentTypeError("Use a non-empty, printable label on a single line.")
+        raise ValueError("Use a non-empty, printable label on a single line.")
     return text
 
 
-def color_argument(value):
-    if not re.fullmatch(r"#[0-9a-fA-F]{6}", value):
-        raise argparse.ArgumentTypeError("Use a six-digit hex color such as #32C7A2.")
+def validate_color(value):
+    if not isinstance(value, str) or not HEX_COLOR_RE.fullmatch(value):
+        raise ValueError("Use a six-digit hex color such as #32C7A2.")
     return value
+
+
+def text_argument(value):
+    try:
+        return validate_text(value)
+    except ValueError as exc:
+        raise argparse.ArgumentTypeError(str(exc)) from exc
+
+
+def color_argument(value):
+    try:
+        return validate_color(value)
+    except ValueError as exc:
+        raise argparse.ArgumentTypeError(str(exc)) from exc
 
 
 def text_width(text):
@@ -28,6 +47,7 @@ def text_width(text):
 
 
 def ink_color(background):
+    background = validate_color(background)
     channels = [int(background[i:i + 2], 16) / 255 for i in (1, 3, 5)]
     linear = [c / 12.92 if c <= 0.04045 else ((c + 0.055) / 1.055) ** 2.4
               for c in channels]
@@ -35,18 +55,24 @@ def ink_color(background):
     return "#ffffff" if 1.05 / (luminance + 0.05) >= (luminance + 0.05) / 0.05 else "#000000"
 
 
-def badge_svg(label, value, color):
+def badge_svg(label, value, color, label_bg=DEFAULT_LABEL_BG):
+    label = validate_text(label)
+    value = validate_text(value)
+    color = validate_color(color)
+    label_bg = validate_color(label_bg)
     label_width, value_width = text_width(label), text_width(value)
     split = label_width + 20
     width = split + value_width + 20
-    label, value = escape(label), escape(value)
+    label_ink = ink_color(label_bg)
+    value_ink = ink_color(color)
+    label_esc, value_esc = escape(label), escape(value)
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="28" viewBox="0 0 {width} 28" role="img" aria-labelledby="title">
-  <title id="title">{label} · {value}</title>
-  <rect width="{split}" height="28" fill="#44464d"/>
+  <title id="title">{label_esc} · {value_esc}</title>
+  <rect width="{split}" height="28" fill="{label_bg}"/>
   <rect x="{split}" width="{width - split}" height="28" fill="{color}"/>
   <g font-family="Verdana, DejaVu Sans, Malgun Gothic, sans-serif" font-size="11" font-weight="700" text-anchor="middle" letter-spacing=".7">
-    <text x="{split / 2:g}" y="18" fill="#ffffff" textLength="{label_width}" lengthAdjust="spacingAndGlyphs">{label}</text>
-    <text x="{(split + width) / 2:g}" y="18" fill="{ink_color(color)}" textLength="{value_width}" lengthAdjust="spacingAndGlyphs">{value}</text>
+    <text x="{split / 2:g}" y="18" fill="{label_ink}" textLength="{label_width}" lengthAdjust="spacingAndGlyphs">{label_esc}</text>
+    <text x="{(split + width) / 2:g}" y="18" fill="{value_ink}" textLength="{value_width}" lengthAdjust="spacingAndGlyphs">{value_esc}</text>
   </g>
 </svg>
 '''
@@ -58,8 +84,9 @@ def main():
     parser.add_argument("value", type=text_argument)
     parser.add_argument("output", type=Path)
     parser.add_argument("--color", type=color_argument, default="#32c7a2")
+    parser.add_argument("--label-bg", type=color_argument, default=DEFAULT_LABEL_BG)
     args = parser.parse_args()
-    svg = badge_svg(args.label, args.value, args.color)
+    svg = badge_svg(args.label, args.value, args.color, label_bg=args.label_bg)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_bytes(svg.encode("utf-8"))
 

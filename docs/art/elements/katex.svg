@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="108" height="28" viewBox="0 0 108 28" role="img" aria-labelledby="title">
-  <title id="title">MATH · KATEX</title>
-  <rect width="50" height="28" fill="#44464d"/>
-  <rect x="50" width="58" height="28" fill="#6F9FEB"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="168" height="28" viewBox="0 0 168 28" role="img" aria-labelledby="title">
+  <title id="title">MATH · KATEX + LATEX</title>
+  <rect width="50" height="28" fill="#23273a"/>
+  <rect x="50" width="118" height="28" fill="#60A5FA"/>
   <g font-family="Verdana, DejaVu Sans, Malgun Gothic, sans-serif" font-size="11" font-weight="700" text-anchor="middle" letter-spacing=".7">
     <text x="25" y="18" fill="#ffffff" textLength="30" lengthAdjust="spacingAndGlyphs">MATH</text>
-    <text x="79" y="18" fill="#000000" textLength="38" lengthAdjust="spacingAndGlyphs">KATEX</text>
+    <text x="109" y="18" fill="#000000" textLength="98" lengthAdjust="spacingAndGlyphs">KATEX + LATEX</text>
   </g>
 </svg>

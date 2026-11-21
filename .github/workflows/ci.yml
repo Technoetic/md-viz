@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+    tags: ['v*']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  verify:
+    name: Verify plugin, badges, gallery & deterministic release (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12'
+
+      - name: Run full unit test suite
+        run: python -m unittest discover -s tests -v
+
+      - name: Smoke test bundled preflight script
+        run: python plugins/md-viz/skills/md-viz/scripts/check_env.py --json > /dev/null
+        shell: bash
+
+      - name: Build and verify deterministic slim plugin ZIP
+        run: |
+          python tools/build_release_zip.py --version v0.3.0 --out dist
+          cat dist/SHA256SUMS.txt
+        shell: bash

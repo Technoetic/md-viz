@@ -21,14 +21,29 @@ class GalleryTests(unittest.TestCase):
                     with file.open("rb") as stream:
                         self.assertEqual(stream.read(8), b"\x89PNG\r\n\x1a\n")
 
-    def test_readme_bundles_both_motion_preferences(self):
-        readme = (ROOT / "README.md").read_text(encoding="utf8")
-        pictures = re.findall(r"<picture>(.*?)</picture>", readme, re.DOTALL)
-        self.assertEqual(len(pictures), 2)
-        for picture in pictures:
-            self.assertIn("prefers-reduced-motion: reduce", picture)
-            source, animation = re.findall(r'\bsrc(?:set)?="([^"]+)"', picture)
-            self.assertEqual(Path(source).suffix, ".png")
-            self.assertEqual(Path(animation).suffix, ".gif")
-            for name in (source, animation):
-                self.assertTrue((ROOT / name).is_file(), name)
+    def test_bilingual_readmes_showcase_all_25_engines_and_live_boosters(self):
+        expected_pngs = {
+            p.relative_to(ROOT).as_posix()
+            for section in ("structure", "data", "notation")
+            for p in (ROOT / "docs/art" / section).glob("*.png")
+        }
+        self.assertEqual(len(expected_pngs), 25)
+        for name in ("README.md", "README.ko.md"):
+            with self.subTest(readme=name):
+                text = (ROOT / name).read_text(encoding="utf8")
+                pictures = re.findall(r"<picture>(.*?)</picture>", text, re.DOTALL)
+                self.assertEqual(len(pictures), 2)
+                for picture in pictures:
+                    self.assertIn("prefers-reduced-motion: reduce", picture)
+                    source, animation = re.findall(r'\bsrc(?:set)?="([^"]+)"', picture)
+                    self.assertEqual(Path(source).suffix, ".png")
+                    self.assertEqual(Path(animation).suffix, ".gif")
+                    for asset in (source, animation):
+                        self.assertTrue((ROOT / asset).is_file(), asset)
+                embedded = set(re.findall(r"docs/art/(?:structure|data|notation)/[a-z0-9-]+\.png", text))
+                self.assertEqual(embedded, expected_pngs)
+                self.assertIn("```mermaid", text)
+                self.assertIn("```geojson", text)
+                self.assertIn("$$", text)
+                self.assertIn("<kbd>", text)
+                self.assertIn("<details open>", text)
