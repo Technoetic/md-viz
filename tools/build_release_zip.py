@@ -5,6 +5,7 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import sys
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -71,6 +72,8 @@ def build_zip(version, out_dir, epoch=None):
 
 
 def main():
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--version", required=True, help="Release version (e.g. v0.3.0 or 0.3.0)")
     parser.add_argument("--out", type=Path, default=ROOT / "dist", help="Output directory")

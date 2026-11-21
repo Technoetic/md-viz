@@ -52,13 +52,13 @@
 Here is how `md-viz` inspects your machine with `scripts/check_env.py` and fans out a single Markdown draft across **25 visualization libraries** and **6+4 GitHub-native techniques** (rendered live by GitHub's native Mermaid engine with high-contrast neon `classDef` styling):
 
 ```mermaid
-flowchart LR
-    DOC["📄 Source Markdown\nSpecs · README · Notes"]:::src --> SCAN["🔍 check_env.py\nZero-Dep Local Preflight"]:::env
-    SCAN --> W1["🎭 Structure & Signals\n9 Libraries\nMermaid · PlantUML · Graphviz\nD2 · Structurizr · markmap\nExcalidraw · WaveDrom · abcjs"]:::cyan
-    SCAN --> W2["📊 Data · Graphs · Maps\n12 Libraries\nVega-Lite · ggplot2 · ECharts\nLeaflet · Altair · Matplotlib\nD3 · Cytoscape · seaborn\nChart.js · Plot · Plotly"]:::amber
-    SCAN --> W3["🧮 Code & Math\n4 Libraries\nShiki · highlight.js\nMathJax · KaTeX"]:::violet
-    SCAN --> W4["✨ GitHub Native 6+4\nGeoJSON · Neon SVG Badges\nEmoji Rhythm · Picture GIF\nAligned Tree · 5/5 Alerts\nLive Mermaid · Live LaTeX"]:::magenta
-    W1 & W2 & W3 & W4 --> FINAL["🚀 Full-Arsenal Visual README\nFactual Fidelity + Maximum Contrast"]:::lime
+flowchart TB
+    DOC["📄 Source Markdown · README · Specs"]:::src --> SCAN["🔍 check_env.py · Local 25-Engine Preflight"]:::env
+    SCAN --> W1["🎭 Structure & Signals · 9\nMermaid · PlantUML · Graphviz · D2 · Structurizr · markmap · Excalidraw · WaveDrom · abcjs"]:::cyan
+    SCAN --> W2["📊 Data · Graphs · Maps · 12\nVega-Lite · ggplot2 · ECharts · Leaflet · Altair · Matplotlib · D3 · Cytoscape · seaborn · Chart.js · Plot · Plotly"]:::amber
+    SCAN --> W3["🧮 Code & Math · 4\nShiki · highlight.js · MathJax · KaTeX"]:::violet
+    SCAN --> W4["✨ GitHub Native · 6+4\nGeoJSON · Neon SVG Badges · Emojis · Picture GIF · Tree · 5/5 Alerts · Live Mermaid & LaTeX"]:::magenta
+    W1 & W2 & W3 & W4 --> FINAL["🚀 Full-Arsenal Visual Showcase · 100% Factual Fidelity · Maximum Contrast"]:::lime
 
     classDef src fill:#131621,stroke:#94a3b8,color:#f8fafc,stroke-width:2px
     classDef env fill:#0f172a,stroke:#38bdf8,color:#e0f2fe,stroke-width:2px
@@ -149,7 +149,7 @@ Every single one of the **25 libraries** is rendered live right below — click 
 
 ---
 
-## 🗺️ Live Interactive GeoJSON Map & GitHub Techniques
+## 🌍 Live Interactive GeoJSON Map & GitHub Techniques
 
 GitHub renders the `geojson` block below as a **live, zoomable, clickable vector map** directly inside this README — synchronized with [`docs/art/elements/shuttle.geojson`](docs/art/elements/shuttle.geojson) and [`examples/data/show.json`](examples/data/show.json):
 
@@ -237,7 +237,7 @@ python plugins/md-viz/skills/md-viz/scripts/check_env.py
 
 ---
 
-## 🗂️ Repository Architecture
+## 📁 Repository Architecture
 
 ```text
 md-viz/                         ← Repository root (MIT)

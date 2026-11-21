@@ -52,13 +52,13 @@
 `md-viz`가 `scripts/check_env.py`로 로컬 엔진을 사전 탐지한 뒤 **25종 시각화 라이브러리**와 **6+4종 GitHub 네이티브 기법**으로 전개하는 전체 흐름입니다(GitHub 네이티브 Mermaid + 고대비 네온 `classDef` 라이브 렌더링):
 
 ```mermaid
-flowchart LR
-    DOC["📄 원고 마크다운\nREADME · 설계서 · 기술 노트"]:::src --> SCAN["🔍 check_env.py\n무의존성 로컬 엔진 탐지"]:::env
-    SCAN --> W1["🎭 구조·신호·악보\n9종 라이브러리\nMermaid · PlantUML · Graphviz\nD2 · Structurizr · markmap\nExcalidraw · WaveDrom · abcjs"]:::cyan
-    SCAN --> W2["📊 데이터·네트워크·지도\n12종 라이브러리\nVega-Lite · ggplot2 · ECharts\nLeaflet · Altair · Matplotlib\nD3 · Cytoscape · seaborn\nChart.js · Plot · Plotly"]:::amber
-    SCAN --> W3["🧮 코드·수식 조판\n4종 라이브러리\nShiki · highlight.js\nMathJax · KaTeX"]:::violet
-    SCAN --> W4["✨ GitHub 표현 6+4종\nGeoJSON · 네온 SVG 배지 월\n고밀도 이모지 · Picture GIF\n열 정렬 트리 · 알림 5/5종\n라이브 Mermaid · 라이브 LaTeX"]:::magenta
-    W1 & W2 & W3 & W4 --> FINAL["🚀 풀스택 고자극 비주얼 문서\n원문 수치 100% 보존 · 최고 대비"]:::lime
+flowchart TB
+    DOC["📄 원고 마크다운 · README · 설계서"]:::src --> SCAN["🔍 check_env.py · 25종 로컬 엔진 탐지"]:::env
+    SCAN --> W1["🎭 구조·신호·악보 · 9종\nMermaid · PlantUML · Graphviz · D2 · Structurizr · markmap · Excalidraw · WaveDrom · abcjs"]:::cyan
+    SCAN --> W2["📊 데이터·네트워크·지도 · 12종\nVega-Lite · ggplot2 · ECharts · Leaflet · Altair · Matplotlib · D3 · Cytoscape · seaborn · Chart.js · Plot · Plotly"]:::amber
+    SCAN --> W3["🧮 코드·수식 조판 · 4종\nShiki · highlight.js · MathJax · KaTeX"]:::violet
+    SCAN --> W4["✨ GitHub 표현 · 6+4종\nGeoJSON · 네온 SVG 배지 · 이모지 · Picture GIF · 트리 · 알림 5/5 · 라이브 Mermaid & LaTeX"]:::magenta
+    W1 & W2 & W3 & W4 --> FINAL["🚀 풀스택 고자극 비주얼 쇼케이스 · 원문 수치 100% 보존 · 최고 대비"]:::lime
 
     classDef src fill:#131621,stroke:#94a3b8,color:#f8fafc,stroke-width:2px
     classDef env fill:#0f172a,stroke:#38bdf8,color:#e0f2fe,stroke-width:2px
@@ -149,7 +149,7 @@ $$\Delta t_{\text{beat}} = \frac{60}{120\text{ BPM}} = 0.5\text{ s}, \qquad T_{8
 
 ---
 
-## 🗺️ 라이브 인터랙티브 GeoJSON 지도 & GitHub 표현 6+4종
+## 🌍 라이브 인터랙티브 GeoJSON 지도 & GitHub 표현 6+4종
 
 아래 `geojson` 블록은 GitHub에서 확대·클릭 가능한 **실시간 지도**로 바로 렌더링됩니다([`docs/art/elements/shuttle.geojson`](docs/art/elements/shuttle.geojson) · [`examples/data/show.json`](examples/data/show.json)과 100% 일치):
 
@@ -235,7 +235,7 @@ python plugins/md-viz/skills/md-viz/scripts/check_env.py
 
 ---
 
-## 🗂️ 저장소 구조
+## 📁 저장소 구조
 
 ```text
 md-viz/                         ← 저장소 루트 (MIT)
