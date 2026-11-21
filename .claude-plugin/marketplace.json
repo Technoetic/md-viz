@@ -9,7 +9,7 @@
       "name": "md-viz",
       "source": "./plugins/md-viz",
       "description": "25종의 시각화 도구와 지도·배지·이모지·GIF·디렉터리 트리·GitHub 알림으로 마크다운을 꾸밉니다.",
-      "version": "0.2.0"
+      "version": "0.2.1"
     }
   ]
 }

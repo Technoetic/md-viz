@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="124" height="28" viewBox="0 0 124 28" role="img" aria-labelledby="title">
+  <title id="title">GitHub 문서 표현 6종</title>
+  <clipPath id="pill"><rect width="124" height="28" rx="6"/></clipPath>
+  <g clip-path="url(#pill)">
+    <path fill="#22263b" d="M0 0h80v28H0z"/>
+    <path fill="#fa94d5" d="M80 0h44v28h-44z"/>
+  </g>
+  <g font-family="system-ui, sans-serif" font-size="13" text-anchor="middle">
+    <text x="40" y="18.5" fill="#f6f4ed">문서 표현</text>
+    <text x="102" y="18.5" fill="#131621" font-weight="bold">6종</text>
+  </g>
+</svg>

@@ -54,8 +54,11 @@ class GitHubElementsTests(unittest.TestCase):
         self.assertEqual([g["coordinates"] for g in geometries if g["type"] == "LineString"], [coordinates])
 
     def test_each_github_alert_has_visible_quoted_content(self):
-        alerts = re.findall(r"(?:\A|\n[ \t]*\n)> \[!(\w+)\][ \t]*\n>[ \t]+\S", self.visible)
-        self.assertTrue({"NOTE", "TIP", "IMPORTANT", "WARNING", "CAUTION"}.issubset(alerts), alerts)
+        for path in (CHAPTER, ROOT / "README.md"):
+            with self.subTest(document=path.name):
+                visible = FENCE.sub("", path.read_text(encoding="utf-8"))
+                alerts = re.findall(r"(?:\A|\n[ \t]*\n)> \[!(\w+)\][ \t]*\n>[ \t]+\S", visible)
+                self.assertEqual(set(alerts), {"NOTE", "TIP", "IMPORTANT", "WARNING", "CAUTION"})
 
     def test_tempo_badge_uses_the_show_tempo(self):
         badges = re.findall(r"\[!\[([^\]]+)\]\(([^)\s]+\.svg)\)\]\(([^)\s]+)\)", self.visible)

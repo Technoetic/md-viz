@@ -1,4 +1,4 @@
 interface:
   display_name: "md-viz · 마크다운 시각화"
-  short_description: "25종의 시각화 도구와 지도·배지·이모지·GIF·파일 트리·GitHub 알림을 활용합니다."
+  short_description: "시각화 도구 25종을 검토하고 이모지·배지와 GitHub 알림 5종을 최대한 활용합니다."
   default_prompt: "$md-viz:md-viz 이 원고에 맞는 시각화와 문서 표현을 적용해 줘. 사용한 도구와 적용한 표현을 알려 줘."
