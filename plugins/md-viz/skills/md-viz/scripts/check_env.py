@@ -159,6 +159,8 @@ def render_markdown(report):
 
 
 def main():
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--cwd", type=Path, default=None, help="Directory to inspect for local node_modules")
     parser.add_argument("--json", action="store_true", help="Emit structured JSON output")

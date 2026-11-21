@@ -33,11 +33,14 @@ class CheckEnvTests(unittest.TestCase):
             self.assertEqual(list(Path(td).iterdir()), [])
 
     def test_markdown_output_contains_table_and_mermaid_ready(self):
+        env = dict(**__import__("os").environ)
+        env["PYTHONIOENCODING"] = "cp1252"
         proc = subprocess.run(
             [sys.executable, str(CHECK_ENV), "--cwd", str(ROOT)],
             capture_output=True,
             text=True,
             encoding="utf-8",
+            env=env,
             check=True,
         )
         self.assertIn("| Status | Engine | Category | Detected | Notes |", proc.stdout)
