@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="158" height="28" viewBox="0 0 158 28" role="img" aria-labelledby="title">
+  <title id="title">시연곡 템포 120 BPM</title>
+  <clipPath id="pill"><rect width="158" height="28" rx="6"/></clipPath>
+  <g clip-path="url(#pill)">
+    <path fill="#22263b" d="M0 0h74v28H0z"/>
+    <path fill="#cdff57" d="M74 0h84v28H74z"/>
+  </g>
+  <g font-family="Verdana, Arial, sans-serif" font-size="12" text-anchor="middle">
+    <text x="37" y="18.5" fill="#f6f4ed" letter-spacing="1">TEMPO</text>
+    <text x="116" y="18.5" fill="#131621" font-weight="bold">120 BPM</text>
+  </g>
+</svg>

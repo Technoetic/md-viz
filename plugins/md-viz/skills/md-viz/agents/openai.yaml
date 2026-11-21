@@ -1,4 +1,4 @@
 interface:
   display_name: "md-viz · 마크다운 시각화"
-  short_description: "25종을 모두 검토해 원고에 맞는 도식·차트·코드·수식 도구를 최대한 활용합니다."
-  default_prompt: "$md-viz:md-viz 이 원고에서 25종을 최대한 활용해 서로 다른 질문에 답하는 시각화를 만들고 실제로 사용한 도구를 알려줘."
+  short_description: "25종의 시각화 도구와 지도·배지·이모지·GIF·파일 트리·GitHub 알림을 활용합니다."
+  default_prompt: "$md-viz:md-viz 이 원고에 맞는 시각화와 문서 표현을 적용해 줘. 사용한 도구와 적용한 표현을 알려 줘."

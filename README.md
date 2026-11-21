@@ -7,11 +7,13 @@
 
 리허설 노트에 **“120 BPM, 4/4박자, 첫 마디는 도·레·미·솔”**이라고 적혀 있습니다. 연주자에게는 악보가, 조명 담당자에게는 어느 박에 스위치를 켤지 보여 주는 그림이 필요합니다. `md-viz`는 독자가 답을 찾을 수 있는 도구를 골라 그림을 만들고, 원문의 해당 문장 옆에 넣습니다.
 
-**[내 도구에 설치하기](#설치하기) · [25종 시각화 보기](#25종-시각화-도감) · [스킬 원문 읽기](plugins/md-viz/skills/md-viz/SKILL.md)**
+**[설치하기](#설치하기) · [25종 시각화 도감](#25종-시각화-도감) · [GitHub 문서 표현 6가지](docs/github-elements.md) · [스킬 원문](plugins/md-viz/skills/md-viz/SKILL.md)**
 
 ## 여덟 음을 붙여 넣으면
 
 아래는 가상 공연 **NEON ENCORE**를 위해 쓴 두 마디입니다. 두 번째 마디에서는 첫 번째 마디를 거슬러 돌아옵니다.
+
+[![공연 템포 120 BPM · 예제 데이터 열기](docs/art/elements/tempo.svg)](examples/data/show.json)
 
 ```text
 X:1
@@ -81,6 +83,15 @@ codex plugin add md-viz@technoetic-md-viz
 | [**무대 뒤의 아홉 장면** · 9종](docs/structure.md) | Mermaid · PlantUML · Graphviz · D2 · Structurizr · markmap · Excalidraw · WaveDrom · abcjs |
 | [**입장부터 앙코르까지, 공연 데이터** · 12종](docs/data.md) | Vega-Lite · Matplotlib · seaborn · Altair · ggplot2 · Chart.js · Observable Plot · Plotly · Apache ECharts · D3 · Cytoscape.js · Leaflet |
 | [**공연 기술 노트의 코드와 수식** · 4종](docs/notation.md) | Shiki · highlight.js · MathJax · KaTeX |
+
+## GitHub 문서 표현 6가지
+
+📍 **셔틀은 어디에서 갈아탈까?** 예제 지도에서 집결지 A, 환승지 B, 무대 C의 위치를 볼 수 있습니다. 🎵 **조명 큐는 얼마나 빠를까?** 템포 배지를 누르면 원본 값이, GIF를 열면 그 박자에 맞춰 켜지는 조명이 보입니다.
+
+예제에는 지도·배지·이모지·GIF를 넣는 구문과 실제 파일을 찾을 수 있는 디렉터리 트리가 있습니다. GitHub 알림 다섯 종류도 완성된 모습과 복사할 문법을 함께 실었습니다. [공연 안내서로 여섯 기법 보기](docs/github-elements.md)
+
+> [!TIP]
+> 한 기법만 요청해도 됩니다. 예를 들어 “처음 온 기여자가 예제를 찾을 수 있게 실제 파일로 디렉터리 트리를 만들고, 실행할 파일에 설명을 붙여 줘”라고 해 보세요.
 
 ### 내 문서에 적용하기
 

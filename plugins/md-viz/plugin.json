@@ -1,8 +1,8 @@
 {
   "$schema": "https://antigravity.google/schemas/v1/plugin.json",
   "name": "md-viz",
-  "version": "0.1.0",
-  "description": "원고의 내용과 게시 환경에 맞춰 25종의 도식·차트·코드·수식 도구로 마크다운을 시각화합니다.",
+  "version": "0.2.0",
+  "description": "25종의 시각화 도구와 지도·배지·이모지·GIF·디렉터리 트리·GitHub 알림으로 마크다운을 꾸밉니다.",
   "author": {
     "name": "Technoetic"
   },

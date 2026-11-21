@@ -1,0 +1,28 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {"title": "A · 집결", "marker-color": "#27aaa6"},
+      "geometry": {"type": "Point", "coordinates": [126.9754, 37.5741]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"title": "B · 환승", "marker-color": "#d33b90"},
+      "geometry": {"type": "Point", "coordinates": [126.9836, 37.5708]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"title": "C · 무대", "marker-color": "#799326"},
+      "geometry": {"type": "Point", "coordinates": [126.9774, 37.5662]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"title": "방문 순서 A → B → C", "stroke": "#228582"},
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [[126.9754, 37.5741], [126.9836, 37.5708], [126.9774, 37.5662]]
+      }
+    }
+  ]
+}

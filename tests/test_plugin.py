@@ -1,7 +1,9 @@
 """Check that all native plugin catalogs resolve the same packaged skill."""
 import json
 from pathlib import Path
+import re
 import unittest
+from urllib.parse import unquote, urlsplit
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -39,6 +41,19 @@ class PluginPackagingTests(unittest.TestCase):
         header = skill.read_text(encoding="utf-8").split("---", 2)[1].splitlines()
         self.assertEqual(skill.parent.name, "md-viz")
         self.assertIn("name: md-viz", header)
+
+    def test_skill_references_are_available_after_plugin_installation(self):
+        package = ROOT / "plugins/md-viz"
+        skill = package / "skills/md-viz/SKILL.md"
+        links = re.findall(r"\]\(([^)\s]+)\)", skill.read_text(encoding="utf-8"))
+        for link in links:
+            url = urlsplit(link)
+            if url.scheme or url.netloc or not url.path:
+                continue
+            with self.subTest(link=link):
+                reference = (skill.parent / unquote(url.path)).resolve()
+                self.assertIn(package, reference.parents)
+                self.assertTrue(reference.is_file(), reference)
 
 
 if __name__ == "__main__":
