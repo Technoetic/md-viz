@@ -38,10 +38,20 @@ def collect_plugin_files():
 
 
 def build_zip(version, out_dir, epoch=None):
-    clean_ver = version.lstrip("v")
-    manifest_ver = json.loads((PLUGIN_DIR / "plugin.json").read_text(encoding="utf-8"))["version"]
+    manifest_vers = {
+        str(p.relative_to(PLUGIN_DIR).as_posix()): json.loads(p.read_text(encoding="utf-8"))["version"]
+        for p in (
+            PLUGIN_DIR / "plugin.json",
+            PLUGIN_DIR / ".claude-plugin" / "plugin.json",
+            PLUGIN_DIR / ".codex-plugin" / "plugin.json",
+        )
+    }
+    if len(set(manifest_vers.values())) != 1:
+        raise ValueError(f"Manifest version mismatch across hosts: {manifest_vers}")
+    manifest_ver = next(iter(manifest_vers.values()))
+    clean_ver = manifest_ver if version == "auto" else version.lstrip("v")
     if clean_ver != manifest_ver:
-        raise ValueError(f"Version mismatch: requested {clean_ver}, plugin.json has {manifest_ver}")
+        raise ValueError(f"Version mismatch: requested {clean_ver}, plugin manifests have {manifest_ver}")
 
     ts = fixed_zip_time(int(os.environ.get("SOURCE_DATE_EPOCH", DEFAULT_EPOCH)) if epoch is None else epoch)
     out_dir = Path(out_dir)

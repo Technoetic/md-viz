@@ -42,7 +42,7 @@ GitHub에서 아래 블록은 클릭·확대 가능한 라이브 지도로 렌�
 <div align="center">
   <a href="plugins/md-viz/plugin.json"><img src="docs/art/elements/release.svg" alt="Release v0.3.0"></a>
   <a href="LICENSE"><img src="docs/art/elements/license.svg" alt="License MIT"></a>
-  <a href="#25-tool-visual-gallery"><img src="docs/art/elements/renderers.svg" alt="Gallery 25 Tools"></a>
+  <a href="#-full-25-engine-inline-visual-wall"><img src="docs/art/elements/renderers.svg" alt="Gallery 25 Tools"></a>
   <a href="docs/github-elements.md"><img src="docs/art/elements/markdown.svg" alt="Markdown 6+4 Live"></a>
 </div>
 ```
