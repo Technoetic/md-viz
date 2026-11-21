@@ -42,6 +42,6 @@ jobs:
 
       - name: Build and verify deterministic slim plugin ZIP
         run: |
-          python tools/build_release_zip.py --version v0.3.0 --out dist
+          python tools/build_release_zip.py --version auto --out dist
           cat dist/SHA256SUMS.txt
         shell: bash
