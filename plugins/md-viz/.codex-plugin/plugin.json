@@ -1,0 +1,20 @@
+{
+  "name": "md-viz",
+  "version": "0.1.0",
+  "description": "원고의 내용과 게시 환경에 맞춰 25종의 도식·차트·코드·수식 도구로 마크다운을 시각화합니다.",
+  "author": {
+    "name": "Technoetic"
+  },
+  "homepage": "https://github.com/Technoetic/md-viz",
+  "repository": "https://github.com/Technoetic/md-viz",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "MD-Viz",
+    "shortDescription": "마크다운 도식·차트·코드·수식 시각화",
+    "developerName": "Technoetic",
+    "category": "Productivity",
+    "defaultPrompt": [
+      "이 README를 md-viz로 시각화해 줘."
+    ]
+  }
+}

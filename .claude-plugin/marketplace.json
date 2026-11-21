@@ -1,0 +1,15 @@
+{
+  "name": "technoetic-md-viz",
+  "description": "MD-Viz 마크다운 시각화 플러그인을 설치할 수 있는 마켓플레이스입니다.",
+  "owner": {
+    "name": "Technoetic"
+  },
+  "plugins": [
+    {
+      "name": "md-viz",
+      "source": "./plugins/md-viz",
+      "description": "원고의 내용과 게시 환경에 맞춰 25종의 도식·차트·코드·수식 도구로 마크다운을 시각화합니다.",
+      "version": "0.1.0"
+    }
+  ]
+}
