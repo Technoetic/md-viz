@@ -1,0 +1,54 @@
+{
+  "admissions": {
+    "minutes": [0, 10, 20, 30, 40, 50],
+    "North": [34, 80, 126, 104, 61, 22],
+    "East": [18, 46, 83, 96, 48, 16],
+    "West": [12, 37, 61, 74, 32, 9]
+  },
+  "beams": {
+    "degrees": [-75,-60,-45,-30,-15,0,15,30,45,60,75],
+    "Cyan": [2,8,34,87,100,56,21,7,3,2,1],
+    "Amber": [1,2,4,8,18,45,81,100,72,28,6]
+  },
+  "audience": {
+    "tracks": ["Arrival","Echo","Pulse","Nova","Drift","Encore"],
+    "zones": ["Floor L","Floor R","Balcony L","Balcony R"],
+    "index": [[48,51,32,38],[62,70,53,47],[81,87,73,71],[91,94,88,83],[65,60,49,50],[99,97,90,93]]
+  },
+  "soundcheck": [
+    {"part":"Vocal","plan":6,"actual":9},
+    {"part":"Drums","plan":8,"actual":7},
+    {"part":"Synth","plan":5,"actual":8},
+    {"part":"Bass","plan":4,"actual":4},
+    {"part":"Guitar","plan":5,"actual":4}
+  ],
+  "queues": {
+    "North":[3,4,5,5,6,6,7,8],
+    "East":[4,6,7,8,9,10,11,13],
+    "West":[2,3,3,4,4,5,6,7]
+  },
+  "power": {"Lighting":48,"Audio":32,"Video":16,"Control":4},
+  "merch": {"Poster":88,"T-shirt":63,"Glow band":55,"Pin":27},
+  "tickets": {"start":2400,"released":100,"sightline":160,"reserved":40},
+  "walks": [
+    ["North","Floor",100],["North","Balcony",40],
+    ["East","Floor",65],["East","Balcony",35],
+    ["West","Floor",45],["West","Balcony",15]
+  ],
+  "cues": {
+    "tempo":120,
+    "beatsPerBar":4,
+    "Wash":[1,1,1,1,1,1,1,1,1,1,0,0,1,1,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+    "Beam":[1,0,0,0,1,0,0,0,1,0,1,0,1,0,1,0,1,0,1,1,1,0,1,1,1,0,1,0,1,0,1,0],
+    "Flash":[0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,1,0,0,0,1,0,0,0,1,0,1,0,1,0,1]
+  },
+  "signal": {
+    "nodes":[["mic","Vocal mic",60,153],["split","Splitter",219,153],["foh","FOH mix",394,83],["rec","Recording mix",394,223],["pa","Main PA",610,83],["disk","Recorder",610,223]],
+    "edges":[["mic","split"],["split","foh"],["split","rec"],["foh","pa"],["rec","disk"]]
+  },
+  "shuttle": [
+    {"label":"A  집결","lat":37.5741,"lon":126.9754},
+    {"label":"B  환승","lat":37.5708,"lon":126.9836},
+    {"label":"C  무대","lat":37.5662,"lon":126.9774}
+  ]
+}

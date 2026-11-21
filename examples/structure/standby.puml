@@ -1,0 +1,21 @@
+@startuml
+hide footbox
+skinparam shadowing false
+skinparam backgroundColor #101324
+skinparam defaultFontName Malgun Gothic
+skinparam defaultFontColor #EAEFFF
+skinparam ArrowColor #7EF6ED
+skinparam sequence {
+  ParticipantBackgroundColor #202742
+  ParticipantBorderColor #8388C1
+  ParticipantFontColor #F1F1FF
+  LifeLineBorderColor #868CB4
+}
+participant "무대감독" as SM
+participant "조명 감독" as LX
+participant "밴드 리더" as Band
+SM -> LX : 조명 대기 요청
+LX --> SM : 조명 준비 완료
+SM -> Band : 시작 신호
+Band --> SM : 첫 박 진입
+@enduml

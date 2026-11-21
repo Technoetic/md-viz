@@ -1,0 +1,16 @@
+direction: right
+classes: {
+  group: {style.fill: "#202542"; style.stroke: "#a39aff"; style.font-color: "#eeeefa"; style.border-radius: 12}
+  unit: {style.fill: "#162e34"; style.stroke: "#5debd7"; style.font-color: "#f1fffc"; style.border-radius: 6}
+}
+wing: "무대 옆 랙" {
+  class: group
+  rx: "무선 수신기" {class: unit}
+  box: "스테이지 박스" {class: unit}
+  rx -> box: "입력" {style.stroke: "#9bf3de"; style.font-color: "#e9fff7"}
+}
+booth: "객석 조정실" {
+  class: group
+  console: "음향 콘솔" {class: unit}
+}
+wing.box -> booth.console: "오디오 링크" {style.stroke: "#f893cc"; style.font-color: "#f6c5e1"}

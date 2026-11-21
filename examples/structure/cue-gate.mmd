@@ -1,0 +1,11 @@
+flowchart LR
+    C(["엔딩 직후"]) --> R{"앙코르<br/>준비 완료?"}
+    R -->|예| G["GO · 연주 시작"]
+    R -->|아직| H["대기 · 재점검"]
+    H --> R
+    classDef wait fill:#271b33,stroke:#ff91d0,color:#fff;
+    classDef gate fill:#302955,stroke:#baafff,color:#fff;
+    classDef go fill:#153c32,stroke:#abff8f,color:#effff0;
+    class C,R gate;
+    class H wait;
+    class G go;

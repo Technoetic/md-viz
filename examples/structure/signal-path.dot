@@ -1,0 +1,9 @@
+digraph stage {
+  graph [bgcolor="transparent", rankdir=LR, nodesep=".45", ranksep=".55", pad=.12]
+  node [shape=box, style="rounded,filled", fontname="Malgun Gothic", fontsize=21,
+        fontcolor="#F3F5FF", color="#7C81AE", fillcolor="#20253E", margin=".20,.14", penwidth=1.8]
+  edge [fontname="Malgun Gothic", color="#73ECE4", penwidth=2.0, arrowsize=.7]
+  mic [label="보컬 마이크"]; synth [label="신시사이저"]; mix [label="믹서", fillcolor="#303158", color="#AFA1FF"]
+  ears [label="인이어 모니터"]; pa [label="객석 스피커"]
+  mic -> mix; synth -> mix; mix -> ears; mix -> pa
+}
