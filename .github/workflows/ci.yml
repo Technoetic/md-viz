@@ -15,7 +15,7 @@ concurrency:
 
 jobs:
   verify:
-    name: Verify zero-install plugin, generators, gallery & deterministic release (${{ matrix.os }})
+    name: Verify plugin, badges, gallery & deterministic release (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
     timeout-minutes: 10
     strategy:
