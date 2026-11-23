@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="161" height="28" viewBox="0 0 161 28" role="img" aria-labelledby="title">
-  <title id="title">STRUCTURE · 9 TOOLS</title>
-  <rect width="88" height="28" fill="#23273a"/>
-  <rect x="88" width="73" height="28" fill="#38BDF8"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="176" height="28" viewBox="0 0 176 28" role="img" aria-labelledby="title">
+  <title id="title">ARCHIVE · 9 STRUCTURE</title>
+  <rect width="73" height="28" fill="#23273a"/>
+  <rect x="73" width="103" height="28" fill="#38BDF8"/>
   <g font-family="Verdana, DejaVu Sans, Malgun Gothic, sans-serif" font-size="11" font-weight="700" text-anchor="middle" letter-spacing=".7">
-    <text x="44" y="18" fill="#ffffff" textLength="68" lengthAdjust="spacingAndGlyphs">STRUCTURE</text>
-    <text x="124.5" y="18" fill="#000000" textLength="53" lengthAdjust="spacingAndGlyphs">9 TOOLS</text>
+    <text x="36.5" y="18" fill="#ffffff" textLength="53" lengthAdjust="spacingAndGlyphs">ARCHIVE</text>
+    <text x="124.5" y="18" fill="#000000" textLength="83" lengthAdjust="spacingAndGlyphs">9 STRUCTURE</text>
   </g>
 </svg>

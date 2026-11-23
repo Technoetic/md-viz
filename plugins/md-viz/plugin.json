@@ -1,9 +1,9 @@
 {
   "$schema": "https://antigravity.google/schemas/v1/plugin.json",
   "name": "md-viz",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "license": "MIT",
-  "description": "High-impact Markdown visualization plugin activating all 25 diagram, chart, music, code, and math renderers plus 6+4 GitHub Markdown visual techniques (neon SVG badges, live Mermaid, GeoJSON maps, LaTeX math, animated GIFs, 5/5 alerts, and gallery walls).",
+  "description": "Zero-install GitHub README.md visual engine: combines GitHub-native live Mermaid, MathJax, GeoJSON, and 5/5 alerts with Python-stdlib-only generators for 10 dark-neon pure SVG chart types, two-tone neon badges, animated GIF89a + reduced-motion PNG loops, and column-aligned repository trees.",
   "author": {
     "name": "Technoetic"
   },
@@ -11,6 +11,6 @@
   "repository": "https://github.com/Technoetic/md-viz",
   "displayName": "MD-Viz",
   "suggestedPrompts": [
-    "Visualize this README at maximum impact using every applicable renderer (25 tools) and all GitHub Markdown visual techniques, then report exact tool coverage."
+    "Visualize this GitHub README.md with zero external installs using md-viz: native Mermaid/MathJax/GeoJSON/5 alerts plus bundled stdlib neon SVG badges, dark-neon SVG charts, animated GIF+PNG loop, and an aligned directory tree."
   ]
 }

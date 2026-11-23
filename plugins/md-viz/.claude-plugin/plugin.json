@@ -1,8 +1,8 @@
 {
   "name": "md-viz",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "license": "MIT",
-  "description": "High-impact Markdown visualization plugin activating all 25 diagram, chart, music, code, and math renderers plus 6+4 GitHub Markdown visual techniques (neon SVG badges, live Mermaid, GeoJSON maps, LaTeX math, animated GIFs, 5/5 alerts, and gallery walls).",
+  "description": "Zero-install GitHub README.md visual engine: combines GitHub-native live Mermaid, MathJax, GeoJSON, and 5/5 alerts with Python-stdlib-only generators for 10 dark-neon pure SVG chart types, two-tone neon badges, animated GIF89a + reduced-motion PNG loops, and column-aligned repository trees.",
   "author": {
     "name": "Technoetic"
   },

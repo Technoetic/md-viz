@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="320" viewBox="0 0 760 320" role="img">
+  <title>Stage Power Share (Illustrative Example)</title>
+  <rect width="760" height="320" rx="12" fill="#0B0F1A" stroke="#27304A" stroke-width="1.5"/>
+  <rect x="0" y="0" width="760" height="5" rx="2" fill="#FFBB54"/>
+  <text x="26" y="38" fill="#F8FAFC" font-family="ui-sans-serif, system-ui, Segoe UI, Arial, sans-serif" font-size="19" font-weight="700">Stage Power Share (Illustrative Example)</text>
+  <text x="734" y="38" text-anchor="end" fill="#FFBB54" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="12" font-weight="700">DONUT · STDLIB SVG</text>
+  <path d="M 195.00 64.00 A 112.00 112.00 0 0 1 211.81 286.73 L 204.75 240.22 A 64.96 64.96 0 0 0 195.00 111.04 Z" fill="#00F5D4"/>
+  <rect x="380" y="82" width="14" height="14" rx="3" fill="#00F5D4"/>
+  <text x="404" y="94" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600">Lighting</text>
+  <text x="732" y="94" text-anchor="end" fill="#00F5D4" font-family="ui-monospace, Consolas, monospace" font-size="14" font-weight="700">48 kWh (48.0%)</text>
+  <path d="M 209.04 287.12 A 112.00 112.00 0 0 1 87.65 144.06 L 132.74 157.48 A 64.96 64.96 0 0 0 203.14 240.45 Z" fill="#FF2E93"/>
+  <rect x="380" y="120" width="14" height="14" rx="3" fill="#FF2E93"/>
+  <text x="404" y="132" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600">Audio</text>
+  <text x="732" y="132" text-anchor="end" fill="#FF2E93" font-family="ui-monospace, Consolas, monospace" font-size="14" font-weight="700">32 kWh (32.0%)</text>
+  <path d="M 88.48 141.39 A 112.00 112.00 0 0 1 164.44 68.25 L 177.28 113.50 A 64.96 64.96 0 0 0 133.22 155.93 Z" fill="#C8FF00"/>
+  <rect x="380" y="158" width="14" height="14" rx="3" fill="#C8FF00"/>
+  <text x="404" y="170" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600">Video</text>
+  <text x="732" y="170" text-anchor="end" fill="#C8FF00" font-family="ui-monospace, Consolas, monospace" font-size="14" font-weight="700">16 kWh (16.0%)</text>
+  <path d="M 167.15 67.52 A 112.00 112.00 0 0 1 192.20 64.03 L 193.38 111.06 A 64.96 64.96 0 0 0 178.85 113.08 Z" fill="#FFBB54"/>
+  <rect x="380" y="196" width="14" height="14" rx="3" fill="#FFBB54"/>
+  <text x="404" y="208" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600">Control</text>
+  <text x="732" y="208" text-anchor="end" fill="#FFBB54" font-family="ui-monospace, Consolas, monospace" font-size="14" font-weight="700">4 kWh (4.0%)</text>
+  <text x="195" y="174" text-anchor="middle" fill="#F8FAFC" font-family="ui-monospace, Consolas, monospace" font-size="25" font-weight="800">100 kWh</text>
+  <text x="195" y="196" text-anchor="middle" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700">TOTAL LOAD</text>
+</svg>

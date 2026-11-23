@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="420" viewBox="0 0 760 420" role="img">
+  <title>Beam Intensity Profile by Angle (Illustrative Example)</title>
+  <rect width="760" height="420" rx="12" fill="#0B0F1A" stroke="#27304A" stroke-width="1.5"/>
+  <rect x="0" y="0" width="760" height="5" rx="2" fill="#C084FC"/>
+  <text x="26" y="38" fill="#F8FAFC" font-family="ui-sans-serif, system-ui, Segoe UI, Arial, sans-serif" font-size="19" font-weight="700">Beam Intensity Profile by Angle (Illustrative Example)</text>
+  <text x="734" y="38" text-anchor="end" fill="#C084FC" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="12" font-weight="700">RADAR · STDLIB SVG</text>
+  <polygon points="248.0,193.5 277.9,210.8 277.9,245.2 248.0,262.5 218.1,245.2 218.1,210.8" fill="none" stroke="#1E293B" stroke-width="1.2"/>
+  <polygon points="248.0,159.0 307.8,193.5 307.8,262.5 248.0,297.0 188.2,262.5 188.2,193.5" fill="none" stroke="#1E293B" stroke-width="1.2"/>
+  <polygon points="248.0,124.5 337.6,176.2 337.6,279.8 248.0,331.5 158.4,279.8 158.4,176.2" fill="none" stroke="#1E293B" stroke-width="1.2"/>
+  <polygon points="248.0,90.0 367.5,159.0 367.5,297.0 248.0,366.0 128.5,297.0 128.5,159.0" fill="none" stroke="#1E293B" stroke-width="1.2"/>
+  <line x1="248" y1="228" x2="248.0" y2="90.0" stroke="#1E293B" stroke-width="1"/>
+  <text x="248.0" y="70.0" text-anchor="middle" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="600">-75°</text>
+  <line x1="248" y1="228" x2="367.5" y2="159.0" stroke="#1E293B" stroke-width="1"/>
+  <text x="388.3" y="151.0" text-anchor="start" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="600">-45°</text>
+  <line x1="248" y1="228" x2="367.5" y2="297.0" stroke="#1E293B" stroke-width="1"/>
+  <text x="388.3" y="313.0" text-anchor="start" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="600">-15°</text>
+  <line x1="248" y1="228" x2="248.0" y2="366.0" stroke="#1E293B" stroke-width="1"/>
+  <text x="248.0" y="394.0" text-anchor="middle" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="600">+15°</text>
+  <line x1="248" y1="228" x2="128.5" y2="297.0" stroke="#1E293B" stroke-width="1"/>
+  <text x="107.7" y="313.0" text-anchor="end" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="600">+45°</text>
+  <line x1="248" y1="228" x2="128.5" y2="159.0" stroke="#1E293B" stroke-width="1"/>
+  <text x="107.7" y="151.0" text-anchor="end" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="600">+75°</text>
+  <polygon points="248.0,225.2 288.6,204.5 367.5,297.0 248.0,257.0 244.4,230.1 246.8,227.3" fill="#00F5D4" fill-opacity="0.22" stroke="#00F5D4" stroke-width="2.6"/>
+  <circle cx="248.0" cy="225.2" r="4" fill="#00F5D4" stroke="#0B0F1A" stroke-width="1.5"/>
+  <circle cx="288.6" cy="204.5" r="4" fill="#00F5D4" stroke="#0B0F1A" stroke-width="1.5"/>
+  <circle cx="367.5" cy="297.0" r="4" fill="#00F5D4" stroke="#0B0F1A" stroke-width="1.5"/>
+  <circle cx="248.0" cy="257.0" r="4" fill="#00F5D4" stroke="#0B0F1A" stroke-width="1.5"/>
+  <circle cx="244.4" cy="230.1" r="4" fill="#00F5D4" stroke="#0B0F1A" stroke-width="1.5"/>
+  <circle cx="246.8" cy="227.3" r="4" fill="#00F5D4" stroke="#0B0F1A" stroke-width="1.5"/>
+  <rect x="490" y="99" width="14" height="14" rx="3" fill="#00F5D4"/>
+  <text x="514" y="110" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600">Cyan Fixture</text>
+  <polygon points="248.0,226.6 252.8,225.2 269.5,240.4 248.0,339.8 162.0,277.7 240.8,223.9" fill="#C8FF00" fill-opacity="0.22" stroke="#C8FF00" stroke-width="2.6"/>
+  <circle cx="248.0" cy="226.6" r="4" fill="#C8FF00" stroke="#0B0F1A" stroke-width="1.5"/>
+  <circle cx="252.8" cy="225.2" r="4" fill="#C8FF00" stroke="#0B0F1A" stroke-width="1.5"/>
+  <circle cx="269.5" cy="240.4" r="4" fill="#C8FF00" stroke="#0B0F1A" stroke-width="1.5"/>
+  <circle cx="248.0" cy="339.8" r="4" fill="#C8FF00" stroke="#0B0F1A" stroke-width="1.5"/>
+  <circle cx="162.0" cy="277.7" r="4" fill="#C8FF00" stroke="#0B0F1A" stroke-width="1.5"/>
+  <circle cx="240.8" cy="223.9" r="4" fill="#C8FF00" stroke="#0B0F1A" stroke-width="1.5"/>
+  <rect x="490" y="133" width="14" height="14" rx="3" fill="#C8FF00"/>
+  <text x="514" y="144" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600">Amber Fixture</text>
+</svg>

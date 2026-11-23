@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="260" viewBox="0 0 1040 260" role="img">
+  <title>MD-VIZ v0.4.0 — GitHub-native Mermaid, MathJax &amp; GeoJSON + Python stdlib SVG, badges, GIF89a &amp; trees.</title>
+  <defs><linearGradient id="heroBar" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#00F5D4"/><stop offset="50%" stop-color="#FF2E93"/><stop offset="100%" stop-color="#C8FF00"/></linearGradient><linearGradient id="heroGlow" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00F5D4" stop-opacity="0.14"/><stop offset="55%" stop-color="#FF2E93" stop-opacity="0.10"/><stop offset="100%" stop-color="#0B0F1A" stop-opacity="0"/></linearGradient></defs>
+  <rect width="1040" height="260" rx="14" fill="#0B0F1A" stroke="#27304A" stroke-width="1.5"/>
+  <rect width="1040" height="260" rx="14" fill="url(#heroGlow)"/>
+  <line x1="40" y1="6" x2="40" y2="254" stroke="#172038" stroke-width="1"/>
+  <line x1="88" y1="6" x2="88" y2="254" stroke="#172038" stroke-width="1"/>
+  <line x1="136" y1="6" x2="136" y2="254" stroke="#172038" stroke-width="1"/>
+  <line x1="184" y1="6" x2="184" y2="254" stroke="#172038" stroke-width="1"/>
+  <line x1="232" y1="6" x2="232" y2="254" stroke="#172038" stroke-width="1"/>
+  <line x1="280" y1="6" x2="280" y2="254" stroke="#172038" stroke-width="1"/>
+  <line x1="328" y1="6" x2="328" y2="254" stroke="#172038" stroke-width="1"/>
+  <line x1="376" y1="6" x2="376" y2="254" stroke="#172038" stroke-width="1"/>
+  <line x1="424" y1="6" x2="424" y2="254" stroke="#172038" stroke-width="1"/>
+  <line x1="472" y1="6" x2="472" y2="254" stroke="#172038" stroke-width="1"/>
+  <line x1="520" y1="6" x2="520" y2="254" stroke="#172038" stroke-width="1"/>
+  <line x1="568" y1="6" x2="568" y2="254" stroke="#172038" stroke-width="1"/>
+  <line x1="616" y1="6" x2="616" y2="254" stroke="#172038" stroke-width="1"/>
+  <line x1="664" y1="6" x2="664" y2="254" stroke="#172038" stroke-width="1"/>
+  <line x1="712" y1="6" x2="712" y2="254" stroke="#172038" stroke-width="1"/>
+  <line x1="760" y1="6" x2="760" y2="254" stroke="#172038" stroke-width="1"/>
+  <line x1="808" y1="6" x2="808" y2="254" stroke="#172038" stroke-width="1"/>
+  <line x1="856" y1="6" x2="856" y2="254" stroke="#172038" stroke-width="1"/>
+  <line x1="904" y1="6" x2="904" y2="254" stroke="#172038" stroke-width="1"/>
+  <line x1="952" y1="6" x2="952" y2="254" stroke="#172038" stroke-width="1"/>
+  <line x1="1000" y1="6" x2="1000" y2="254" stroke="#172038" stroke-width="1"/>
+  <line x1="6" y1="40" x2="1034" y2="40" stroke="#172038" stroke-width="1"/>
+  <line x1="6" y1="88" x2="1034" y2="88" stroke="#172038" stroke-width="1"/>
+  <line x1="6" y1="136" x2="1034" y2="136" stroke="#172038" stroke-width="1"/>
+  <line x1="6" y1="184" x2="1034" y2="184" stroke="#172038" stroke-width="1"/>
+  <line x1="6" y1="232" x2="1034" y2="232" stroke="#172038" stroke-width="1"/>
+  <rect x="0" y="0" width="1040" height="6" rx="3" fill="url(#heroBar)"/>
+  <circle cx="934" cy="134" r="76" fill="none" stroke="#00F5D4" stroke-width="2" stroke-opacity="0.35" stroke-dasharray="16 8"/>
+  <circle cx="934" cy="134" r="52" fill="none" stroke="#FF2E93" stroke-width="3" stroke-opacity="0.6" stroke-dasharray="24 8"/>
+  <circle cx="934" cy="134" r="28" fill="none" stroke="#C8FF00" stroke-width="3" stroke-opacity="0.85"/>
+  <circle cx="934" cy="134" r="8" fill="#00F5D4"/>
+  <text x="42" y="54" fill="#00F5D4" font-family="ui-monospace, Consolas, monospace" font-size="13" font-weight="700" letter-spacing="1.5">ZERO-INSTALL GITHUB README.MD VISUAL ENGINE</text>
+  <text x="42" y="114" fill="#F8FAFC" font-family="ui-sans-serif, system-ui, Segoe UI, Arial, sans-serif" font-size="40" font-weight="800">MD-VIZ v0.4.0</text>
+  <text x="42" y="154" fill="#CBD5E1" font-family="ui-sans-serif, system-ui, Segoe UI, Arial, sans-serif" font-size="17">GitHub-native Mermaid, MathJax &amp; GeoJSON + Python stdlib SVG, badges, GIF89a &amp; trees.</text>
+  <rect x="42" y="198" width="161" height="30" rx="6" fill="#00F5D4"/><text x="122.5" y="218" text-anchor="middle" fill="#0B0F1A" font-family="ui-monospace, Consolas, monospace" font-size="12" font-weight="700">0 EXTERNAL DEPS</text>
+  <rect x="215" y="198" width="188" height="30" rx="6" fill="#FF2E93"/><text x="309.0" y="218" text-anchor="middle" fill="#F8FAFC" font-family="ui-monospace, Consolas, monospace" font-size="12" font-weight="700">10 PURE-SVG CHARTS</text>
+  <rect x="415" y="198" width="143" height="30" rx="6" fill="#C8FF00"/><text x="486.5" y="218" text-anchor="middle" fill="#0B0F1A" font-family="ui-monospace, Consolas, monospace" font-size="12" font-weight="700">STDLIB GIF89A</text>
+  <rect x="570" y="198" width="179" height="30" rx="6" fill="#FFBB54"/><text x="659.5" y="218" text-anchor="middle" fill="#0B0F1A" font-family="ui-monospace, Consolas, monospace" font-size="12" font-weight="700">GITHUB NATIVE 6+4</text>
+</svg>

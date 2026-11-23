@@ -15,7 +15,7 @@ concurrency:
 
 jobs:
   verify:
-    name: Verify plugin, badges, gallery & deterministic release (${{ matrix.os }})
+    name: Verify zero-install plugin, generators, gallery & deterministic release (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
     timeout-minutes: 10
     strategy:
@@ -33,11 +33,13 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Run full unit test suite
+      - name: Run full unit test suite (Python stdlib only)
         run: python -m unittest discover -s tests -v
 
-      - name: Smoke test bundled preflight script
-        run: python plugins/md-viz/skills/md-viz/scripts/check_env.py --json > /dev/null
+      - name: Smoke test zero-install bundled scripts
+        run: |
+          python plugins/md-viz/skills/md-viz/scripts/check_env.py --json > /dev/null
+          python plugins/md-viz/skills/md-viz/scripts/tree_gen.py --root . --max-depth 2 > /dev/null
         shell: bash
 
       - name: Build and verify deterministic slim plugin ZIP

@@ -55,6 +55,9 @@ class ReleaseZipTests(unittest.TestCase):
                         "md-viz/skills/md-viz/agents/openai.yaml",
                         "md-viz/skills/md-viz/references/markdown-patterns.md",
                         "md-viz/skills/md-viz/scripts/badge.py",
+                        "md-viz/skills/md-viz/scripts/svg_chart.py",
+                        "md-viz/skills/md-viz/scripts/gif_anim.py",
+                        "md-viz/skills/md-viz/scripts/tree_gen.py",
                         "md-viz/skills/md-viz/scripts/check_env.py",
                     ):
                         self.assertIn(required, names)
