@@ -1,4 +1,4 @@
 interface:
-  display_name: "md-viz · Max-Impact Markdown Visualizer"
-  short_description: "25종 시각화 라이브러리와 GitHub 표현 6+4종을 최대 화력으로 총동원하는 고자극 마크다운 시각화 플러그인."
-  default_prompt: "$md-viz:md-viz 이 문서에 가능한 모든 시각화 라이브러리(25종)와 GitHub 표현 기법(6+4종)을 최대한 극적이고 선명하게 총동원해 시각화하고, 실사용 도구·표현 집계를 보고해 줘."
+  display_name: "md-viz · Zero-Install GitHub README Visualizer"
+  short_description: "외부 패키지 설치 없이 Python 표준 라이브러리와 GitHub 네이티브 문법만으로 README.md를 고자극 시각화하는 전용 플러그인."
+  default_prompt: "$md-viz:md-viz 외부 설치 없이 이 저장소의 README.md를 GitHub 네이티브(Mermaid·MathJax·GeoJSON·알림 5종)와 번들 Python 표준 라이브러리 생성기(네온 배지·순수 SVG 차트 10종·GIF89a+PNG·정렬 트리)로 고자극 시각화하고 결과를 검증해 줘."

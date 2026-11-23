@@ -1,6 +1,6 @@
 {
   "name": "technoetic-md-viz",
-  "description": "Marketplace for MD-Viz — the high-impact 25-renderer Markdown visualization and GitHub visual design plugin.",
+  "description": "Marketplace for MD-Viz — the zero-install GitHub README.md visual engine combining native Markdown diagrams with Python-stdlib-only SVG, GIF, badge, and directory-tree generators.",
   "owner": {
     "name": "Technoetic"
   },
@@ -8,8 +8,8 @@
     {
       "name": "md-viz",
       "source": "./plugins/md-viz",
-      "description": "High-impact Markdown visualization plugin activating all 25 diagram, chart, music, code, and math renderers plus 6+4 GitHub Markdown visual techniques (neon SVG badges, live Mermaid, GeoJSON maps, LaTeX math, animated GIFs, 5/5 alerts, and gallery walls).",
-      "version": "0.3.0"
+      "description": "Zero-install GitHub README.md visual engine: combines GitHub-native live Mermaid, MathJax, GeoJSON, and 5/5 alerts with Python-stdlib-only generators for 10 dark-neon pure SVG chart types, two-tone neon badges, animated GIF89a + reduced-motion PNG loops, and column-aligned repository trees.",
+      "version": "0.4.0"
     }
   ]
 }

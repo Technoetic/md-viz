@@ -1,16 +1,44 @@
-# ⚡ 고자극 GitHub Markdown 표현 패턴집 (`6+4`종)
+# ⚡ 무설치 GitHub README.md 표현 패턴집 (네이티브 + Stdlib 생성기 4종)
 
-공연 리허설은 시연용 예시다. README 배지와 디렉터리 트리는 `md-viz` 저장소의 실제 파일을 사용한다. 다른 문서에 옮길 때는 반드시 대상 저장소의 실제 이름·값·경로로 교체한다.
+외부 패키지 설치 없이 **GitHub 네이티브 문법**과 **번들 Python 3 표준 라이브러리 생성기 4종**만으로 바로 복사·실행할 수 있는 완성 레시피다. 다른 저장소에 옮길 때는 반드시 대상 저장소의 실제 이름·수치·경로로 교체한다.
 
 ---
 
-## 1. 🗺️ 인터랙티브 지리 지도 (`geojson`)
+## 1. 🌊 GitHub 네이티브 · 라이브 네온 `mermaid` 블록
 
-GitHub에서 아래 블록은 클릭·확대 가능한 라이브 지도로 렌더링된다. 좌표 순서는 반드시 `[경도, 위도]`다. `marker-color`와 `stroke`에 고대비 네온 색을 넣고, 오프라인·인쇄용 정지 지도나 좌표표를 나란히 둔다.
+GitHub `README.md`에서 별도 이미지 변환 없이 즉시 벡터로 렌더링된다.
 
 ````markdown
-📍 집결 지점 A는 동경 `126.9754°`, 북위 `37.5741°`에 있다(시연용 좌표).
+```mermaid
+flowchart LR
+    DOC["📄 README.md"]:::src --> NAT["🌊 GitHub Native\nMermaid · MathJax · GeoJSON · 5 Alerts"]:::cyan
+    DOC --> STD["🐍 Zero-Install Stdlib\nbadge · svg_chart · gif_anim · tree_gen"]:::magenta
+    NAT & STD --> OUT["🚀 High-Impact GitHub README"]:::lime
 
+    classDef src fill:#131621,stroke:#94a3b8,color:#f8fafc,stroke-width:2px
+    classDef cyan fill:#083344,stroke:#00f5d4,color:#ccfbf1,stroke-width:2px
+    classDef magenta fill:#500724,stroke:#ff2e93,color:#fce7f3,stroke-width:2px
+    classDef lime fill:#1a2e05,stroke:#c8ff00,color:#ecfccb,stroke-width:3px
+```
+````
+
+---
+
+## 2. 🧮 GitHub 네이티브 · 라이브 `MathJax` 수식
+
+GitHub 공식 내장 수식 엔진은 **MathJax**다. 인라인 `$...$`, 블록 `$$...$$`, 또는 ` ```math ` 펜스를 그대로 쓴다.
+
+```markdown
+$$\Delta t_{\text{beat}} = \frac{60}{120\text{ BPM}} = 0.5\text{ s}, \qquad T_{8\text{ bars}} = 8 \times 4 \times 0.5\text{ s} = 16\text{ s}$$
+```
+
+---
+
+## 3. 🗺️ GitHub 네이티브 · 라이브 인터랙티브 `geojson` 지도
+
+좌표 순서는 반드시 `[경도, 위도]`다.
+
+````markdown
 ```geojson
 {
   "type": "FeatureCollection",
@@ -34,76 +62,7 @@ GitHub에서 아래 블록은 클릭·확대 가능한 라이브 지도로 렌�
 
 ---
 
-## 2. 🏷️ 다중 줄 네온 SVG 배지 월 (`scripts/badge.py`)
-
-`H1` 제목 바로 아래에 `<div align="center">` 여러 줄로 2톤 직사각형 SVG 배지를 촘촘히 배치한다. 각 배지는 반드시 근거 파일·앵커·워크플로에 연결한다.
-
-```html
-<div align="center">
-  <a href="plugins/md-viz/plugin.json"><img src="docs/art/elements/release.svg" alt="Release v0.3.0"></a>
-  <a href="LICENSE"><img src="docs/art/elements/license.svg" alt="License MIT"></a>
-  <a href="#-full-25-engine-inline-visual-wall"><img src="docs/art/elements/renderers.svg" alt="Gallery 25 Tools"></a>
-  <a href="docs/github-elements.md"><img src="docs/art/elements/markdown.svg" alt="Markdown 6+4 Live"></a>
-</div>
-```
-
-스킬 폴더에서 표준 라이브러리 전용 [배지 생성기](../scripts/badge.py)로 28px SVG 배지를 즉시 생성한다(배경 휘도 WCAG 자동 대비, 6자리 hex 엄격 검증, XML 이스케이프):
-
-```sh
-python scripts/badge.py GALLERY "25 TOOLS" data-tools.svg --color "#C8EF51"
-python scripts/badge.py TEMPO "120 BPM" tempo.svg --color "#C8FF00" --label-bg "#23273a"
-```
-
----
-
-## 3. ⚡ 고밀도 시맨틱 이모지 리듬
-
-절 제목, 설치 단계, 표 행, 상태 목록에 의미가 통일된 이모지를 붙이고 항상 텍스트 레이블과 짝지운다.
-
-```markdown
-- ✅ **완료** — 로컬 렌더러 25종 사전 점검 (`check_env.py`)
-- 🔥 **핵심** — 고대비 다크-네온 멀티컬럼 갤러리 전면 배치
-- ⚠️ **주의** — 외부 렌더러 미설치 시 대체 경로 기록
-```
-
----
-
-## 4. 🎬 루프 애니메이션 GIF + `prefers-reduced-motion` PNG
-
-움직임으로 시선을 즉각 사로잡되, 동작 줄이기 설정 사용자를 위해 동일 해상도 정지 PNG를 `<picture>`로 짝지운다.
-
-```html
-<picture>
-  <source media="(prefers-reduced-motion: reduce)" srcset="docs/art/cue-player.png">
-  <img src="docs/art/cue-player.gif" width="1080" alt="Wash, Beam, Flash 32-beat lighting cue animation.">
-</picture>
-```
-
----
-
-## 5. 🗂️ 열 정렬 역할 주석 디렉터리 트리
-
-실제 파일·폴더만 포함하고 동아시아 전각 폭 기준으로 `←` 화살표 열을 칼같이 맞춘다.
-
-````markdown
-```text
-.                           ← 저장소 루트
-├── examples/               ← 공연 예제의 입력과 코드
-│   ├── data/               ← 공연 데이터
-│   │   └── show.json       ← 조명 큐와 템포의 원본
-│   └── cue_player.py       ← 조명 큐 애니메이션 생성
-└── docs/                   ← 시각화 도감
-    └── art/                ← 도감에 쓰는 그림
-        ├── cue-player.gif  ← 재생 중인 조명 큐
-        └── cue-player.png  ← 첫 박의 정지 화면
-```
-````
-
----
-
-## 6. 📣 GitHub 알림 5종 전량 (`5/5`)
-
-문서 전체에서 다섯 유형 모두 근거 있는 위치를 찾아 배치한다.
+## 4. 📣 GitHub 네이티브 · 알림 5종 전량 (`5/5`)
 
 ```markdown
 > [!NOTE]
@@ -126,61 +85,92 @@ python scripts/badge.py TEMPO "120 BPM" tempo.svg --color "#C8FF00" --label-bg "
 
 ---
 
-## 7. 🌊 네이티브 부스터 · 라이브 네온 스타일 Mermaid
+## 5. 🏷️ 무설치 stdlib · 다중 줄 네온 SVG 배지 월 (`scripts/badge.py`)
 
-GitHub에서 즉시 렌더링되는 `mermaid` 코드 블록에 고대비 `classDef`를 입혀 시각 임팩트를 극대화한다.
-
-````markdown
-```mermaid
-flowchart LR
-    SRC["📄 Source Markdown"]:::src --> ENV["🔍 check_env.py"]:::env
-    ENV --> S["🎭 Structure · 9"]:::cyan
-    ENV --> D["📊 Data · 12"]:::amber
-    ENV --> N["🧮 Code+Math · 4"]:::violet
-    ENV --> G["⚡ GitHub · 6+4"]:::magenta
-    S & D & N & G --> OUT["🚀 High-Impact Visual Doc"]:::lime
-
-    classDef src fill:#131621,stroke:#94a3b8,color:#f8fafc,stroke-width:2px
-    classDef env fill:#1e293b,stroke:#38bdf8,color:#e0f2fe,stroke-width:2px
-    classDef cyan fill:#083344,stroke:#00f5d4,color:#ccfbf1,stroke-width:2px
-    classDef amber fill:#451a03,stroke:#ffbb54,color:#fef3c7,stroke-width:2px
-    classDef violet fill:#2e1065,stroke:#c084fc,color:#f3e8ff,stroke-width:2px
-    classDef magenta fill:#500724,stroke:#ff2e93,color:#fce7f3,stroke-width:2px
-    classDef lime fill:#1a2e05,stroke:#c8ff00,color:#ecfccb,stroke-width:3px
+```sh
+python scripts/badge.py RELEASE "V0.4.0" docs/art/release.svg --color "#2864BA"
+python scripts/badge.py ZERO-DEPS "PYTHON STDLIB" docs/art/zero-deps.svg --color "#00F5D4"
 ```
-````
 
----
-
-## 8. 🧮 네이티브 부스터 · 라이브 LaTeX 수식 (`$$...$$`)
-
-렌더링된 KaTeX/MathJax 카드 옆에 GitHub 네이티브 수식을 짝지워 복사성과 시각적 강렬함을 동시에 확보한다.
-
-```markdown
-$$\Delta t_{\text{beat}} = \frac{60}{120\text{ BPM}} = 0.5\text{ s}, \qquad T_{8\text{ bars}} = 8 \times 4 \times 0.5\text{ s} = 16\text{ s}$$
+```html
+<div align="center">
+  <a href="plugins/md-viz/plugin.json"><img src="docs/art/release.svg" alt="Release v0.4.0"></a>
+  <a href="plugins/md-viz/skills/md-viz/SKILL.md"><img src="docs/art/zero-deps.svg" alt="Zero Dependencies Python Stdlib"></a>
+</div>
 ```
 
 ---
 
-## 9. 🖼️ 네이티브 부스터 · 멀티컬럼 인라인 갤러리 월 (`<details open>`)
+## 6. 📊 무설치 stdlib · 순수 SVG 차트 10종 (`scripts/svg_chart.py`)
 
-모든 시각화 결과를 페이지 안에서 바로 조망할 수 있게 3열 그리드 + `<details open>`으로 배치한다.
+GitHub `<img>`에서 안전하게 렌더링되는 순수 `<svg>`만 출력한다(`<script>`·`<foreignObject>` 0건). 지원 유형: `hero`, `kpi`, `bar`, `line`, `donut`, `heatmap`, `waterfall`, `radar`, `sankey`, `timeline`.
+
+```json
+{
+  "title": "Zero-Install Visual Stack",
+  "subtitle": "KPI STRIP",
+  "accent": "#00F5D4",
+  "items": [
+    {"label": "EXTERNAL DEPS", "value": "0", "delta": "STDLIB", "note": "No npm / pip / browser"},
+    {"label": "SVG VISUALS", "value": "10", "delta": "SAFE", "note": "Pure GitHub <img> SVG"},
+    {"label": "GITHUB NATIVE", "value": "6", "delta": "LIVE", "note": "Mermaid · MathJax · GeoJSON"},
+    {"label": "ANIMATION", "value": "GIF+PNG", "delta": "A11Y", "note": "Reduced-motion <picture>"}
+  ]
+}
+```
+
+```sh
+python scripts/svg_chart.py --type kpi --spec kpi.json --out docs/art/kpi.svg --readme README.md --slot kpi --alt "Zero-install stack KPI strip"
+```
+
+---
+
+## 7. 🎬 무설치 stdlib · 루프 GIF89a + 정지 PNG (`scripts/gif_anim.py`)
+
+Pillow 없이 GIF89a 애니메이션과 동일 해상도 PNG를 함께 생성하고 `<picture>` 태그를 삽입한다.
+
+```json
+{
+  "title": "ZERO-INSTALL PIPELINE LOOP",
+  "width": 760,
+  "height": 196,
+  "steps": 16,
+  "duration_ms": 220,
+  "tracks": [
+    {"label": "NATIVE", "color": "#00F5D4", "active": [0, 1, 2, 3, 8, 9, 10, 11]},
+    {"label": "SVG", "color": "#FF2E93", "active": [2, 3, 4, 5, 6, 10, 11, 12, 13]},
+    {"label": "GIF", "color": "#C8FF00", "active": [5, 6, 7, 12, 13, 14, 15]}
+  ]
+}
+```
+
+```sh
+python scripts/gif_anim.py --spec loop.json --out docs/art/loop.gif --readme README.md --slot loop --alt "Zero-install animated step loop"
+```
+
+---
+
+## 8. 🗂️ 무설치 stdlib · 실제 저장소 열 정렬 트리 (`scripts/tree_gen.py`)
+
+실제 파일·폴더만 스캔해 동아시아 전각 폭 기준 단일 열로 `← 역할 설명`을 정렬한다.
+
+```sh
+python scripts/tree_gen.py --root . --max-depth 3 --readme README.md --slot repo-tree
+```
+
+---
+
+## 9. 🖼️ 멀티컬럼 갤러리 월 (`<details open>`) & `<kbd>` 키캡
 
 ```markdown
 <details open>
-<summary><strong>🎭 Structure & Signals · 9 Engines</strong></summary>
+<summary><strong>⚡ Zero-Install Pure-SVG Visual Gallery</strong></summary>
 
-| 🔀 Mermaid | 💬 PlantUML | 🕸️ Graphviz |
+| 📊 KPI Strip | 📈 Trend Line | 🍩 Donut Ring |
 |:---:|:---:|:---:|
-| [![Mermaid](docs/art/structure/cue-gate.png)](docs/structure.md#시작-판단--mermaid) | [![PlantUML](docs/art/structure/standby.png)](docs/structure.md#호출과-응답--plantuml) | [![Graphviz](docs/art/structure/signal-path.png)](docs/structure.md#소리의-갈림길--graphviz) |
+| ![KPI](docs/art/zero-install/kpi.svg) | ![Line](docs/art/zero-install/line.svg) | ![Donut](docs/art/zero-install/donut.svg) |
 
 </details>
-```
 
----
-
-## 10. ⌨️ 네이티브 부스터 · `<kbd>` 키캡 프롬프트 필
-
-```markdown
-<kbd>/md-viz</kbd> + <kbd>25 Engines</kbd> + <kbd>6+4 Patterns</kbd> → **Full-Throttle Visual Overdrive**
+<kbd>/md-viz</kbd> + <kbd>0 External Installs</kbd> + <kbd>10 Pure-SVG Charts</kbd> + <kbd>Stdlib GIF89a</kbd>
 ```

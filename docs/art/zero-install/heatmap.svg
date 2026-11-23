@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="763" height="314" viewBox="0 0 763 314" role="img">
+  <title>Crowd Energy by Track &amp; Zone (Illustrative Example)</title>
+  <rect width="763" height="314" rx="12" fill="#0B0F1A" stroke="#27304A" stroke-width="1.5"/>
+  <rect x="0" y="0" width="763" height="5" rx="2" fill="#FF2E93"/>
+  <text x="26" y="38" fill="#F8FAFC" font-family="ui-sans-serif, system-ui, Segoe UI, Arial, sans-serif" font-size="19" font-weight="700">Crowd Energy by Track &amp; Zone (Illustrative Example)</text>
+  <text x="737" y="38" text-anchor="end" fill="#FF2E93" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="12" font-weight="700">HEATMAP · STDLIB SVG</text>
+  <text x="179.0" y="76" text-anchor="middle" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">Arrival</text>
+  <text x="281.0" y="76" text-anchor="middle" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">Echo</text>
+  <text x="383.0" y="76" text-anchor="middle" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">Pulse</text>
+  <text x="485.0" y="76" text-anchor="middle" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">Nova</text>
+  <text x="587.0" y="76" text-anchor="middle" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">Drift</text>
+  <text x="689.0" y="76" text-anchor="middle" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">Encore</text>
+  <text x="119" y="115" text-anchor="end" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600">Floor L</text>
+  <rect x="131" y="88" width="96" height="44" rx="6" fill="#813bb3"/>
+  <text x="179.0" y="115" text-anchor="middle" fill="#F8FAFC" font-family="ui-monospace, Consolas, monospace" font-size="14" font-weight="700">48</text>
+  <rect x="233" y="88" width="96" height="44" rx="6" fill="#c234a7"/>
+  <text x="281.0" y="115" text-anchor="middle" fill="#F8FAFC" font-family="ui-monospace, Consolas, monospace" font-size="14" font-weight="700">62</text>
+  <rect x="335" y="88" width="96" height="44" rx="6" fill="#ff5084"/>
+  <text x="383.0" y="115" text-anchor="middle" fill="#F8FAFC" font-family="ui-monospace, Consolas, monospace" font-size="14" font-weight="700">81</text>
+  <rect x="437" y="88" width="96" height="44" rx="6" fill="#ff886b"/>
+  <text x="485.0" y="115" text-anchor="middle" fill="#0B0F1A" font-family="ui-monospace, Consolas, monospace" font-size="14" font-weight="700">91</text>
+  <rect x="539" y="88" width="96" height="44" rx="6" fill="#d033a2"/>
+  <text x="587.0" y="115" text-anchor="middle" fill="#F8FAFC" font-family="ui-monospace, Consolas, monospace" font-size="14" font-weight="700">65</text>
+  <rect x="641" y="88" width="96" height="44" rx="6" fill="#ffb557"/>
+  <text x="689.0" y="115" text-anchor="middle" fill="#0B0F1A" font-family="ui-monospace, Consolas, monospace" font-size="14" font-weight="700">99</text>
+  <text x="119" y="165" text-anchor="end" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600">Floor R</text>
+  <rect x="131" y="138" width="96" height="44" rx="6" fill="#8f3ab7"/>
+  <text x="179.0" y="165" text-anchor="middle" fill="#F8FAFC" font-family="ui-monospace, Consolas, monospace" font-size="14" font-weight="700">51</text>
+  <rect x="233" y="138" width="96" height="44" rx="6" fill="#e8309b"/>
+  <text x="281.0" y="165" text-anchor="middle" fill="#F8FAFC" font-family="ui-monospace, Consolas, monospace" font-size="14" font-weight="700">70</text>
+  <rect x="335" y="138" width="96" height="44" rx="6" fill="#ff7275"/>
+  <text x="383.0" y="165" text-anchor="middle" fill="#0B0F1A" font-family="ui-monospace, Consolas, monospace" font-size="14" font-weight="700">87</text>
+  <rect x="437" y="138" width="96" height="44" rx="6" fill="#ff9963"/>
+  <text x="485.0" y="165" text-anchor="middle" fill="#0B0F1A" font-family="ui-monospace, Consolas, monospace" font-size="14" font-weight="700">94</text>
+  <rect x="539" y="138" width="96" height="44" rx="6" fill="#b935aa"/>
+  <text x="587.0" y="165" text-anchor="middle" fill="#F8FAFC" font-family="ui-monospace, Consolas, monospace" font-size="14" font-weight="700">60</text>
+  <rect x="641" y="138" width="96" height="44" rx="6" fill="#ffaa5c"/>
+  <text x="689.0" y="165" text-anchor="middle" fill="#0B0F1A" font-family="ui-monospace, Consolas, monospace" font-size="14" font-weight="700">97</text>
+  <text x="119" y="215" text-anchor="end" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600">Balcony L</text>
+  <rect x="131" y="188" width="96" height="44" rx="6" fill="#3c4683"/>
+  <text x="179.0" y="215" text-anchor="middle" fill="#F8FAFC" font-family="ui-monospace, Consolas, monospace" font-size="14" font-weight="700">32</text>
+  <rect x="233" y="188" width="96" height="44" rx="6" fill="#9839b4"/>
+  <text x="281.0" y="215" text-anchor="middle" fill="#F8FAFC" font-family="ui-monospace, Consolas, monospace" font-size="14" font-weight="700">53</text>
+  <rect x="335" y="188" width="96" height="44" rx="6" fill="#f62f96"/>
+  <text x="383.0" y="215" text-anchor="middle" fill="#F8FAFC" font-family="ui-monospace, Consolas, monospace" font-size="14" font-weight="700">73</text>
+  <rect x="437" y="188" width="96" height="44" rx="6" fill="#ff7772"/>
+  <text x="485.0" y="215" text-anchor="middle" fill="#0B0F1A" font-family="ui-monospace, Consolas, monospace" font-size="14" font-weight="700">88</text>
+  <rect x="539" y="188" width="96" height="44" rx="6" fill="#863bb6"/>
+  <text x="587.0" y="215" text-anchor="middle" fill="#F8FAFC" font-family="ui-monospace, Consolas, monospace" font-size="14" font-weight="700">49</text>
+  <rect x="641" y="188" width="96" height="44" rx="6" fill="#ff836d"/>
+  <text x="689.0" y="215" text-anchor="middle" fill="#0B0F1A" font-family="ui-monospace, Consolas, monospace" font-size="14" font-weight="700">90</text>
+  <text x="119" y="265" text-anchor="end" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600">Balcony R</text>
+  <rect x="131" y="238" width="96" height="44" rx="6" fill="#564295"/>
+  <text x="179.0" y="265" text-anchor="middle" fill="#F8FAFC" font-family="ui-monospace, Consolas, monospace" font-size="14" font-weight="700">38</text>
+  <rect x="233" y="238" width="96" height="44" rx="6" fill="#7d3cb0"/>
+  <text x="281.0" y="265" text-anchor="middle" fill="#F8FAFC" font-family="ui-monospace, Consolas, monospace" font-size="14" font-weight="700">47</text>
+  <rect x="335" y="238" width="96" height="44" rx="6" fill="#ec3099"/>
+  <text x="383.0" y="265" text-anchor="middle" fill="#F8FAFC" font-family="ui-monospace, Consolas, monospace" font-size="14" font-weight="700">71</text>
+  <rect x="437" y="238" width="96" height="44" rx="6" fill="#ff5b7f"/>
+  <text x="485.0" y="265" text-anchor="middle" fill="#F8FAFC" font-family="ui-monospace, Consolas, monospace" font-size="14" font-weight="700">83</text>
+  <rect x="539" y="238" width="96" height="44" rx="6" fill="#8a3ab9"/>
+  <text x="587.0" y="265" text-anchor="middle" fill="#F8FAFC" font-family="ui-monospace, Consolas, monospace" font-size="14" font-weight="700">50</text>
+  <rect x="641" y="238" width="96" height="44" rx="6" fill="#ff9466"/>
+  <text x="689.0" y="265" text-anchor="middle" fill="#0B0F1A" font-family="ui-monospace, Consolas, monospace" font-size="14" font-weight="700">93</text>
+</svg>

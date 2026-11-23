@@ -1,6 +1,8 @@
-# MD-Viz Plugin (`v0.3.0`, MIT)
+# MD-Viz Plugin (`v0.4.0`, MIT)
 
-High-impact, full-arsenal Markdown visualization skill for **Antigravity CLI (`agy`)**, **Claude Code**, and **Codex**.
+**Zero-install GitHub `README.md` visual engine** for **Antigravity CLI (`agy`)**, **Claude Code**, and **Codex**.
+
+Zero `npm install`, zero `pip install`, zero external binaries — every bundled generator runs strictly on the **Python 3 standard library** and pairs seamlessly with GitHub's native Markdown renderers (`Mermaid`, `MathJax`, `GeoJSON`, Alerts `5/5`).
 
 ## Install
 
@@ -9,25 +11,37 @@ High-impact, full-arsenal Markdown visualization skill for **Antigravity CLI (`a
 - **Antigravity CLI:** `agy plugin install https://github.com/Technoetic/md-viz/tree/main/plugins/md-viz`
 - **Codex CLI:** `codex plugin marketplace add Technoetic/md-viz && codex plugin add md-viz@technoetic-md-viz`
 
-## What Is Included
+## What Is Included (100% Python 3 Stdlib — 0 External Installs)
 
-- `skills/md-viz/SKILL.md` — Maximalist visual-overdrive orchestration rules covering **25 visualization libraries** (9 structure/signal/music + 12 data/chart/network/map + 4 code/math) and **6 core GitHub Markdown techniques + 4 native layout boosters** (styled live Mermaid, live LaTeX math, multi-column `<details>` gallery walls, `<kbd>` pills).
-- `skills/md-viz/references/markdown-patterns.md` — Copy-ready templates for neon badge banners, live GeoJSON maps, styled Mermaid pipelines, native LaTeX equations, `<picture>` reduced-motion GIFs, column-aligned annotated directory trees, and all 5 GitHub alerts.
-- `skills/md-viz/scripts/badge.py` — Zero-dependency Python stdlib two-tone 28 px SVG badge generator with strict hex validation, WCAG contrast ink selection, East-Asian width calculation, and XML escaping.
-- `skills/md-viz/scripts/check_env.py` — Zero-dependency read-only preflight script that detects which of the 25 visualization engines are locally available.
+- `skills/md-viz/SKILL.md` — Dedicated zero-install GitHub `README.md` visualization workflow combining GitHub-native live syntax with the 4 bundled Python stdlib generators.
+- `skills/md-viz/references/markdown-patterns.md` — Copy-ready templates for live Mermaid, MathJax, GeoJSON, 5/5 alerts, `<picture>` GIF/PNG, neon badge banners, pure SVG chart JSON specs, and aligned directory trees.
+- `skills/md-viz/scripts/badge.py` — 28 px two-tone neon SVG badge generator (strict 6-digit hex, WCAG ink contrast, East-Asian width, XML escaping).
+- `skills/md-viz/scripts/svg_chart.py` — **10 GitHub `<img>`-safe pure dark-neon SVG visual types** (`hero`, `kpi`, `bar`, `line`, `donut`, `heatmap`, `waterfall`, `radar`, `sankey`, `timeline`) with built-in `<script>`/`<foreignObject>` rejection and idempotent `--readme --slot` embedding.
+- `skills/md-viz/scripts/gif_anim.py` — Pure-stdlib animated **GIF89a + identical-dimension reduced-motion PNG** generator emitting ready-to-paste `<picture>` HTML.
+- `skills/md-viz/scripts/tree_gen.py` — Real-filesystem directory tree formatter with exact East-Asian single-column `← role` alignment.
+- `skills/md-viz/scripts/check_env.py` — Read-only preflight verifying the zero-install stack and optional external renderers.
 
-## Quick Commands
+## Quick Commands (0 Dependencies)
 
 ```sh
-# 1. Inspect locally available renderers (0 dependencies)
+# 1. Verify the zero-install GitHub README stack
 python skills/md-viz/scripts/check_env.py
 
-# 2. Generate a vivid two-tone neon SVG badge
-python skills/md-viz/scripts/badge.py GALLERY "25 TOOLS" badge.svg --color "#C8EF51"
+# 2. Generate a two-tone neon SVG badge
+python skills/md-viz/scripts/badge.py ZERO-DEPS "PYTHON STDLIB" badge.svg --color "#00F5D4"
+
+# 3. Generate a pure GitHub-safe dark-neon SVG chart & embed into README.md
+python skills/md-viz/scripts/svg_chart.py --type kpi --spec kpi.json --out docs/art/kpi.svg --readme README.md --slot kpi
+
+# 4. Generate a looping animated GIF89a + reduced-motion PNG <picture> pair
+python skills/md-viz/scripts/gif_anim.py --spec loop.json --out docs/art/loop.gif --readme README.md --slot loop
+
+# 5. Generate a real-repo column-aligned directory tree
+python skills/md-viz/scripts/tree_gen.py --root . --max-depth 3
 ```
 
 ## Full Showcase & Documentation
 
-- English Showcase & Live 25-Tool Gallery: [Repository README](https://github.com/Technoetic/md-viz)
+- English Showcase: [Repository README](https://github.com/Technoetic/md-viz)
 - Korean Showcase: [README.ko.md](https://github.com/Technoetic/md-viz/blob/main/README.ko.md)
 - License: [MIT](LICENSE)

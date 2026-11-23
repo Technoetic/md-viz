@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="252" viewBox="0 0 800 252" role="img">
+  <title>Merchandise Ranking (Illustrative Example)</title>
+  <rect width="800" height="252" rx="12" fill="#0B0F1A" stroke="#27304A" stroke-width="1.5"/>
+  <rect x="0" y="0" width="800" height="5" rx="2" fill="#C8FF00"/>
+  <text x="26" y="38" fill="#F8FAFC" font-family="ui-sans-serif, system-ui, Segoe UI, Arial, sans-serif" font-size="19" font-weight="700">Merchandise Ranking (Illustrative Example)</text>
+  <text x="774" y="38" text-anchor="end" fill="#C8FF00" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="12" font-weight="700">BAR · ZERO-INSTALL SVG</text>
+  <text x="144" y="88" text-anchor="end" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600">Poster</text>
+  <rect x="156" y="70" width="514" height="26" rx="6" fill="#131621"/>
+  <rect x="156" y="70" width="514" height="26" rx="6" fill="#00F5D4"/>
+  <text x="682" y="88" fill="#00F5D4" font-family="ui-monospace, Consolas, monospace" font-size="14" font-weight="700">88 pcs</text>
+  <text x="144" y="130" text-anchor="end" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600">T-shirt</text>
+  <rect x="156" y="112" width="514" height="26" rx="6" fill="#131621"/>
+  <rect x="156" y="112" width="368" height="26" rx="6" fill="#FF2E93"/>
+  <text x="682" y="130" fill="#FF2E93" font-family="ui-monospace, Consolas, monospace" font-size="14" font-weight="700">63 pcs</text>
+  <text x="144" y="172" text-anchor="end" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600">Glow band</text>
+  <rect x="156" y="154" width="514" height="26" rx="6" fill="#131621"/>
+  <rect x="156" y="154" width="321" height="26" rx="6" fill="#C8FF00"/>
+  <text x="682" y="172" fill="#C8FF00" font-family="ui-monospace, Consolas, monospace" font-size="14" font-weight="700">55 pcs</text>
+  <text x="144" y="214" text-anchor="end" fill="#F8FAFC" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600">Pin</text>
+  <rect x="156" y="196" width="514" height="26" rx="6" fill="#131621"/>
+  <rect x="156" y="196" width="158" height="26" rx="6" fill="#FFBB54"/>
+  <text x="682" y="214" fill="#FFBB54" font-family="ui-monospace, Consolas, monospace" font-size="14" font-weight="700">27 pcs</text>
+</svg>
