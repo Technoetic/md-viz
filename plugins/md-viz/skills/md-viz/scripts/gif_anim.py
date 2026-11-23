@@ -323,8 +323,8 @@ def main():
     alt = str(args.alt or spec.get("title") or args.out.stem).replace("\n", " ").strip()
     snippet = (
         "<picture>\n"
-        f'  <source media="(prefers-reduced-motion: reduce)" srcset="{rel_png}">\n'
-        f'  <img src="{rel_gif}" width="{meta["width"]}" alt="{html.escape(alt, quote=True)}">\n'
+        f'  <source media="(prefers-reduced-motion: reduce)" srcset="{html.escape(rel_png, quote=True)}">\n'
+        f'  <img src="{html.escape(rel_gif, quote=True)}" width="{meta["width"]}" alt="{html.escape(alt, quote=True)}">\n'
         "</picture>"
     )
     meta["markdown"] = snippet

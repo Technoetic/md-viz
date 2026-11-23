@@ -85,7 +85,7 @@ def main():
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--version", required=True, help="Release version (e.g. v0.3.0 or 0.3.0)")
+    parser.add_argument("--version", required=True, help="Release version (e.g. v0.4.0 or 0.4.0)")
     parser.add_argument("--out", type=Path, default=ROOT / "dist", help="Output directory")
     parser.add_argument("--epoch", type=int, default=None, help="Optional UTC Unix timestamp override")
     args = parser.parse_args()

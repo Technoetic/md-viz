@@ -160,9 +160,9 @@ def render_kpi(spec):
     title = spec.get("title", "Key Metrics")
     subtitle = spec.get("subtitle", "KPI STRIP")
     accent = validate_hex(spec.get("accent", "#00F5D4"))
-    cols = min(len(items), int(spec.get("columns", 4)))
+    cols = max(1, min(len(items), int(spec.get("columns", 4))))
     rows = math.ceil(len(items) / cols)
-    card_w = int(spec.get("card_width", 206))
+    card_w = int(spec.get("card_width", 228))
     card_h = 104
     gap = 16
     pad = 26
@@ -265,7 +265,9 @@ def render_line(spec):
     plot_w = width - left - right
     plot_h = height - top - bottom
 
-    all_vals = [float(v) for s in series_list for v in s["values"]]
+    all_vals = [float(v) for s in series_list for v in s.get("values", ())]
+    if not all_vals or any(len(s.get("values", ())) != len(x_labels) for s in series_list):
+        raise ValueError("Each line series must have a 'values' list matching len(x)")
     min_v = min(0.0, min(all_vals))
     max_v = max(all_vals)
     if math.isclose(min_v, max_v):
@@ -544,6 +546,8 @@ def render_sankey(spec):
     def layout_column(totals):
         keys = list(totals.keys())
         total_v = sum(totals.values())
+        if total_v <= 0:
+            raise ValueError("sankey link values must sum to > 0")
         usable = avail_h - gap * max(0, len(keys) - 1)
         y = float(top)
         boxes = {}
@@ -705,9 +709,11 @@ def main():
     meta = generate_chart(args.type, spec, args.out)
     base_dir = args.readme.resolve().parent if args.readme else Path.cwd().resolve()
     rel = Path(os.path.relpath(args.out.resolve(), start=base_dir)).as_posix()
-    alt = str(args.alt or spec.get("title") or args.out.stem).replace("\n", " ").strip()
+    alt = str(args.alt or spec.get("title") or args.out.stem).replace("\n", " ").replace("]", "\\]").strip()
     snippet = f"![{alt}]({rel})"
     if args.link:
+        if args.link.strip().lower().startswith(("javascript:", "data:", "vbscript:")):
+            raise ValueError(f"Unsafe link scheme: {args.link!r}")
         snippet = f"[{snippet}]({args.link})"
     meta["markdown"] = snippet
     if args.readme:
